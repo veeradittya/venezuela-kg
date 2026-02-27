@@ -1,0 +1,1053 @@
+entity_1,entity_2,relation_type,frequency
+Securities and Exchange Commission,United States,co_occurrence,3193
+United States,European Union,co_occurrence,2420
+United States,United Kingdom,co_occurrence,2270
+China,United States,co_occurrence,2264
+European Union,United Kingdom,co_occurrence,1761
+Securities and Exchange Commission,European Union,co_occurrence,1696
+Canada,United States,co_occurrence,1679
+Securities and Exchange Commission,United Kingdom,co_occurrence,1619
+Securities and Exchange Commission,China,co_occurrence,1607
+China,European Union,co_occurrence,1552
+China,United Kingdom,co_occurrence,1388
+Securities and Exchange Commission,Canada,co_occurrence,1273
+Canada,United Kingdom,co_occurrence,1084
+United States,Russia,co_occurrence,1059
+United States,Foreign Corrupt Practices Act,co_occurrence,1023
+China,Canada,co_occurrence,1008
+Canada,European Union,co_occurrence,992
+United States,India,co_occurrence,992
+United States,Japan,co_occurrence,974
+United States,Australia,co_occurrence,934
+United States,Ukraine,co_occurrence,851
+Environmental Protection Agency,United States,co_occurrence,836
+Brexit,United States,co_occurrence,831
+United States,the Tax Cuts and Jobs Act,co_occurrence,819
+Mexico,United States,co_occurrence,813
+China,Russia,co_occurrence,812
+China,India,co_occurrence,804
+Brexit,United Kingdom,co_occurrence,804
+United States,the California Consumer Privacy Act,co_occurrence,803
+Brexit,European Union,co_occurrence,795
+Securities and Exchange Commission,Japan,co_occurrence,792
+United States,Brazil,co_occurrence,792
+Securities and Exchange Commission,Russia,co_occurrence,787
+United States,Management s Discussion and Analysis of Financial Condition,co_occurrence,786
+United States,Federal Reserve,co_occurrence,781
+United States,Euro,co_occurrence,781
+European Union,Russia,co_occurrence,779
+China,Japan,co_occurrence,760
+Securities and Exchange Commission,Australia,co_occurrence,759
+Securities and Exchange Commission,India,co_occurrence,735
+Australia,United Kingdom,co_occurrence,735
+Ukraine,Russia,co_occurrence,728
+Germany,United States,co_occurrence,713
+European Union,India,co_occurrence,705
+India,United Kingdom,co_occurrence,699
+Russia,United Kingdom,co_occurrence,692
+European Union,Japan,co_occurrence,685
+European Union,the California Consumer Privacy Act,co_occurrence,683
+European Union,Foreign Corrupt Practices Act,co_occurrence,682
+Securities and Exchange Commission,Foreign Corrupt Practices Act,co_occurrence,673
+United States,U.S. Treasury,co_occurrence,672
+Securities and Exchange Commission,Ukraine,co_occurrence,657
+United States,GHG,co_occurrence,655
+Japan,United Kingdom,co_occurrence,650
+United States,ESG,co_occurrence,648
+European Union,Ukraine,co_occurrence,647
+China,Foreign Corrupt Practices Act,co_occurrence,643
+China,Ukraine,co_occurrence,633
+Food and Drug Administration,United States,co_occurrence,633
+China,Australia,co_occurrence,631
+European Union,Australia,co_occurrence,631
+Securities and Exchange Commission,Federal Reserve,co_occurrence,629
+Securities and Exchange Commission,the Tax Cuts and Jobs Act,co_occurrence,626
+China,Brazil,co_occurrence,613
+Canada,Australia,co_occurrence,609
+Securities and Exchange Commission,Management s Discussion and Analysis of Financial Condition,co_occurrence,607
+Canada,Mexico,co_occurrence,607
+Germany,United Kingdom,co_occurrence,603
+Securities and Exchange Commission,Germany,co_occurrence,601
+Securities and Exchange Commission,the California Consumer Privacy Act,co_occurrence,596
+Securities and Exchange Commission,U.S. Treasury,co_occurrence,595
+China,Mexico,co_occurrence,591
+Securities and Exchange Commission,Brexit,co_occurrence,586
+Securities and Exchange Commission,Mexico,co_occurrence,583
+Federal Trade Commission,United States,co_occurrence,578
+the California Consumer Privacy Act,United Kingdom,co_occurrence,568
+United States,Department of Justice,co_occurrence,565
+Securities and Exchange Commission,Brazil,co_occurrence,563
+United Kingdom,Brazil,co_occurrence,563
+Foreign Corrupt Practices Act,United Kingdom,co_occurrence,562
+Securities and Exchange Commission,Euro,co_occurrence,560
+United States,Critical Accounting Policies,co_occurrence,554
+United States,Medicare,co_occurrence,553
+Euro,United Kingdom,co_occurrence,547
+Securities and Exchange Commission,Environmental Protection Agency,co_occurrence,543
+Securities and Exchange Commission,Principal Accounting Fees and Services,co_occurrence,542
+European Union,Brazil,co_occurrence,541
+Germany,China,co_occurrence,535
+Ukraine,United Kingdom,co_occurrence,530
+United States,Principal Accounting Fees and Services,co_occurrence,526
+Canada,Japan,co_occurrence,520
+European Union,Euro,co_occurrence,520
+United States,FCPA,co_occurrence,516
+Mexico,United Kingdom,co_occurrence,515
+the Tax Cuts and Jobs Act,European Union,co_occurrence,514
+Canada,India,co_occurrence,513
+United States,the U.S. Congress,co_occurrence,511
+Canada,Russia,co_occurrence,510
+the Tax Cuts and Jobs Act,United Kingdom,co_occurrence,507
+Securities and Exchange Commission,ESG,co_occurrence,504
+Singapore,United States,co_occurrence,504
+United States,States,co_occurrence,504
+United States,the Delaware General Corporation Law,co_occurrence,503
+China,the California Consumer Privacy Act,co_occurrence,502
+China,Brexit,co_occurrence,502
+Securities and Exchange Commission,Critical Accounting Policies,co_occurrence,492
+Germany,European Union,co_occurrence,491
+China,Euro,co_occurrence,488
+Canada,Brazil,co_occurrence,488
+Mexico,European Union,co_occurrence,484
+Food and Drug Administration,European Union,co_occurrence,476
+United States,Cybersecurity,co_occurrence,474
+Securities and Exchange Commission,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,473
+China,the Tax Cuts and Jobs Act,co_occurrence,464
+United States,Ireland,co_occurrence,463
+United States,the Private Securities Litigation Reform Act,co_occurrence,462
+United States,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,461
+Medicaid,United States,co_occurrence,458
+United States,Credit Agreement,co_occurrence,457
+Securities and Exchange Commission,Department of Justice,co_occurrence,447
+Moody s Investors Service,United States,co_occurrence,446
+North American,United States,co_occurrence,445
+United States,Corporate,co_occurrence,444
+United States,climate change,co_occurrence,441
+Securities and Exchange Commission,Food and Drug Administration,co_occurrence,440
+Medicaid,Medicare,co_occurrence,439
+Securities and Exchange Commission,Federal Trade Commission,co_occurrence,436
+ESG,European Union,co_occurrence,433
+European Union,Federal Reserve,co_occurrence,433
+Japan,Australia,co_occurrence,433
+United States,the U.S. Dollar,co_occurrence,432
+Germany,Canada,co_occurrence,431
+France,United States,co_occurrence,431
+United States,Credit Facility,co_occurrence,430
+Security Ownership of Certain Beneficial Owners and Management,Principal Accounting Fees and Services,co_occurrence,430
+Federal Trade Commission,European Union,co_occurrence,428
+India,Brazil,co_occurrence,428
+Federal Reserve,United Kingdom,co_occurrence,428
+Securities and Exchange Commission,States,co_occurrence,427
+Securities and Exchange Commission,Singapore,co_occurrence,426
+Securities and Exchange Commission,GHG,co_occurrence,426
+Securities and Exchange Commission,Corporate,co_occurrence,424
+Financial Reporting,United States,co_occurrence,424
+European Union,Management s Discussion and Analysis of Financial Condition,co_occurrence,418
+Securities and Exchange Commission,Financial Reporting,co_occurrence,414
+Environmental Protection Agency,GHG,co_occurrence,414
+United States,Taiwan,co_occurrence,414
+Securities and Exchange Commission,Disagreements with Accountants on Accounting and Financial Disclosure,co_occurrence,413
+United States,Office of Foreign Assets Control,co_occurrence,411
+China,Taiwan,co_occurrence,410
+European Union,FCPA,co_occurrence,410
+China,Management s Discussion and Analysis of Financial Condition,co_occurrence,406
+Moody s,United States,co_occurrence,406
+United States,Healthcare,co_occurrence,406
+Disagreements with Accountants on Accounting and Financial Disclosure,United States,co_occurrence,403
+Canada,Ukraine,co_occurrence,402
+China,Singapore,co_occurrence,401
+Securities and Exchange Commission,the Private Securities Litigation Reform Act,co_occurrence,400
+Securities and Exchange Commission,FCPA,co_occurrence,400
+United States,FINANCIAL STATEMENT SCHEDULES,co_occurrence,399
+Securities and Exchange Commission,FINANCIAL STATEMENT SCHEDULES,co_occurrence,397
+Food and Drug Administration,United Kingdom,co_occurrence,395
+India,Russia,co_occurrence,392
+United States,Item 1A. Risk Factors,co_occurrence,391
+European Union,the Delaware General Corporation Law,co_occurrence,390
+European Union,the U.S. Congress,co_occurrence,390
+United States,Stockholder Matters,co_occurrence,388
+China,ESG,co_occurrence,386
+Federal Trade Commission,United Kingdom,co_occurrence,385
+Securities and Exchange Commission,Credit Agreement,co_occurrence,384
+the U.S. Supreme Court,United States,co_occurrence,383
+Securities and Exchange Commission,Stockholder Matters,co_occurrence,383
+China,Food and Drug Administration,co_occurrence,383
+Management s Discussion and Analysis of Financial Condition,United Kingdom,co_occurrence,382
+United States,Liquidity and Capital Resources,co_occurrence,380
+Massachusetts,United States,co_occurrence,379
+United States,Restricted,co_occurrence,379
+France,United Kingdom,co_occurrence,376
+Canada,Brexit,co_occurrence,374
+Securities and Exchange Commission,Credit Facility,co_occurrence,372
+European Union,Department of Justice,co_occurrence,372
+Pennsylvania,United States,co_occurrence,370
+China,Environmental Protection Agency,co_occurrence,370
+United States,Colorado,co_occurrence,370
+Securities and Exchange Commission,Ireland,co_occurrence,369
+United States,Australian,co_occurrence,369
+Securities and Exchange Commission,the U.S. Congress,co_occurrence,367
+Regulation S-K,United States,co_occurrence,366
+European Union,Medicare,co_occurrence,364
+Securities and Exchange Commission,Liquidity and Capital Resources,co_occurrence,363
+China,FCPA,co_occurrence,363
+Singapore,United Kingdom,co_occurrence,363
+Russia,Brazil,co_occurrence,362
+Securities and Exchange Commission,Cybersecurity,co_occurrence,361
+Securities and Exchange Commission,the Delaware General Corporation Law,co_occurrence,359
+Securities and Exchange Commission,Restricted,co_occurrence,359
+Food and Drug Administration,Medicare,co_occurrence,359
+United States,Netherlands,co_occurrence,359
+Medicaid,Food and Drug Administration,co_occurrence,358
+FCPA,United Kingdom,co_occurrence,358
+Asian,United States,co_occurrence,357
+United States,Foreign Currency Translation,co_occurrence,357
+Japan,India,co_occurrence,357
+Securities and Exchange Commission,Moody s Investors Service,co_occurrence,356
+Disagreements with Accountants on Accounting and Financial Disclosure,Principal Accounting Fees and Services,co_occurrence,355
+Illinois,United States,co_occurrence,355
+Canada,Euro,co_occurrence,355
+Securities and Exchange Commission,France,co_occurrence,354
+Department of Justice,United Kingdom,co_occurrence,354
+United Kingdom,Ireland,co_occurrence,354
+United States,Contingencies,co_occurrence,353
+United States,Intangible Assets,co_occurrence,353
+United States,New Jersey,co_occurrence,352
+ESG,United Kingdom,co_occurrence,350
+Securities and Exchange Commission,Item 1A. Risk Factors,co_occurrence,349
+Securities and Exchange Commission,North American,co_occurrence,349
+Hong Kong,United States,co_occurrence,349
+United States,General Counsel,co_occurrence,349
+Securities and Exchange Commission,Medicare,co_occurrence,348
+Canada,Foreign Corrupt Practices Act,co_occurrence,347
+Singapore,European Union,co_occurrence,345
+the U.S. Congress,United Kingdom,co_occurrence,345
+artificial intelligence,United States,co_occurrence,344
+United States,the London Interbank Offered Rate,co_occurrence,344
+Securities and Exchange Commission,General Counsel,co_occurrence,343
+Canada,the California Consumer Privacy Act,co_occurrence,343
+Securities and Exchange Commission,Regulation S-K,co_occurrence,342
+United States,FERC,co_occurrence,342
+Securities and Exchange Commission,Moody s,co_occurrence,341
+Mexico,Brazil,co_occurrence,340
+Australia,Brazil,co_occurrence,340
+the Financial Conduct Authority,United States,co_occurrence,339
+Medicare,United Kingdom,co_occurrence,339
+Disagreements with Accountants on Accounting and Financial Disclosure,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,338
+Medicaid,European Union,co_occurrence,338
+European Union,Ireland,co_occurrence,338
+Germany,Australia,co_occurrence,337
+United States,Management s Report on Internal Control,co_occurrence,337
+Environmental Protection Agency,European Union,co_occurrence,336
+Environmental Protection Agency,Canada,co_occurrence,336
+United States,Ohio,co_occurrence,336
+Pennsylvania,Securities and Exchange Commission,co_occurrence,334
+U.S. Treasury,United Kingdom,co_occurrence,334
+Securities and Exchange Commission,Foreign Currency Translation,co_occurrence,333
+Securities and Exchange Commission,Management s Report on Internal Control,co_occurrence,333
+Acquisitions,United States,co_occurrence,333
+United States,Revolving Credit Facility,co_occurrence,333
+India,Australia,co_occurrence,333
+United States,E.U.,co_occurrence,332
+Australia,Russia,co_occurrence,332
+Securities and Exchange Commission,Taiwan,co_occurrence,327
+United States,Maryland,co_occurrence,327
+United States,Significant Accounting Policies,co_occurrence,327
+Canada,the Tax Cuts and Jobs Act,co_occurrence,326
+European Union,Cybersecurity,co_occurrence,326
+Securities and Exchange Commission,climate change,co_occurrence,325
+ESG,Russia,co_occurrence,324
+Securities and Exchange Commission,Colorado,co_occurrence,323
+Securities and Exchange Commission,Intangible Assets,co_occurrence,322
+Germany,Japan,co_occurrence,322
+Financial Reporting,Management s Report on Internal Control,co_occurrence,322
+United States,District Court,co_occurrence,322
+Securities and Exchange Commission,Section 13 or 15(d,co_occurrence,321
+European Union,Office of Foreign Assets Control,co_occurrence,320
+China,Federal Trade Commission,co_occurrence,319
+ESG,Ukraine,co_occurrence,319
+United States,HIPAA,co_occurrence,318
+Securities and Exchange Commission,the U.S. Dollar,co_occurrence,317
+China,GHG,co_occurrence,317
+Environmental Protection Agency,United Kingdom,co_occurrence,317
+China,Federal Reserve,co_occurrence,316
+Securities and Exchange Commission,Office of Foreign Assets Control,co_occurrence,314
+China,the Delaware General Corporation Law,co_occurrence,314
+United States,IP,co_occurrence,314
+the Delaware General Corporation Law,United Kingdom,co_occurrence,314
+Securities and Exchange Commission,Controller,co_occurrence,313
+Switzerland,United States,co_occurrence,313
+China,climate change,co_occurrence,312
+Customer,United States,co_occurrence,312
+Japan,Brazil,co_occurrence,311
+Contractual Obligations,United States,co_occurrence,310
+United States,FCA,co_occurrence,310
+Securities and Exchange Commission,Contingencies,co_occurrence,309
+the Inflation Reduction Act,United States,co_occurrence,309
+European Union,GHG,co_occurrence,309
+Germany,France,co_occurrence,308
+France,European Union,co_occurrence,308
+United Kingdom,E.U.,co_occurrence,308
+China,Ireland,co_occurrence,307
+Internal Control,United States,co_occurrence,307
+Securities and Exchange Commission,New Jersey,co_occurrence,306
+United States,Controller,co_occurrence,306
+China,Cybersecurity,co_occurrence,305
+United States,Capital Resources,co_occurrence,303
+United Kingdom,Netherlands,co_occurrence,303
+Securities and Exchange Commission,Internal Control,co_occurrence,302
+China,France,co_occurrence,302
+Medicaid,United Kingdom,co_occurrence,302
+Canada,Principal Accounting Fees and Services,co_occurrence,302
+Securities and Exchange Commission,Significant Accounting Policies,co_occurrence,301
+Securities and Exchange Commission,Massachusetts,co_occurrence,300
+Japan,Russia,co_occurrence,300
+North American,Canada,co_occurrence,299
+China,Department of Justice,co_occurrence,299
+United States,Israel,co_occurrence,299
+Securities and Exchange Commission,Basis for Opinion The Company,co_occurrence,298
+Securities and Exchange Commission,Netherlands,co_occurrence,298
+Securities and Exchange Commission,Australian,co_occurrence,298
+inflation,United States,co_occurrence,298
+United States,Puerto Rico,co_occurrence,298
+United States,Basis for Opinion The Company,co_occurrence,298
+United States,Section 13 or 15(d,co_occurrence,297
+European Union,climate change,co_occurrence,296
+Germany,India,co_occurrence,295
+the Health Insurance Portability,United States,co_occurrence,295
+Mexico,Australia,co_occurrence,295
+Ukraine,India,co_occurrence,294
+States,United Kingdom,co_occurrence,294
+Securities and Exchange Commission,Hong Kong,co_occurrence,293
+Securities and Exchange Commission,Acquisitions,co_occurrence,293
+United States,South Korea,co_occurrence,293
+the California Consumer Privacy Act,Russia,co_occurrence,293
+Securities and Exchange Commission,Contractual Obligations,co_occurrence,292
+Mexico,India,co_occurrence,292
+Mexico,Russia,co_occurrence,292
+United States,AOCI,co_occurrence,292
+the U.S. Supreme Court,Securities and Exchange Commission,co_occurrence,291
+European Union,Taiwan,co_occurrence,291
+European Union,U.S. Treasury,co_occurrence,291
+CMS,United States,co_occurrence,290
+China,U.S. Treasury,co_occurrence,289
+United States,FDIC,co_occurrence,289
+Intellectual Property,United States,co_occurrence,288
+Singapore,Japan,co_occurrence,288
+Canada,France,co_occurrence,288
+Canada,Food and Drug Administration,co_occurrence,288
+United States,the U.S. Department,co_occurrence,287
+United States,Fair,co_occurrence,287
+European Union,E.U.,co_occurrence,287
+Foreign Corrupt Practices Act,Russia,co_occurrence,287
+Securities and Exchange Commission,Ohio,co_occurrence,286
+Italy,United States,co_occurrence,286
+Canada,Management s Discussion and Analysis of Financial Condition,co_occurrence,286
+Canada,Federal Reserve,co_occurrence,286
+Securities and Exchange Commission,Medicaid,co_occurrence,283
+United States,the U.S. Department of Commerce,co_occurrence,283
+China,the U.S. Congress,co_occurrence,282
+United States,Malaysia,co_occurrence,282
+the Financial Conduct Authority,United Kingdom,co_occurrence,281
+Canada,U.S. Treasury,co_occurrence,281
+Securities and Exchange Commission,Revolving Credit Facility,co_occurrence,280
+Securities and Exchange Commission,Illinois,co_occurrence,279
+FINANCIAL STATEMENT SCHEDULES,Principal Accounting Fees and Services,co_occurrence,279
+Critical Accounting Policies,United Kingdom,co_occurrence,276
+Securities and Exchange Commission,Healthcare,co_occurrence,275
+Canada,Critical Accounting Policies,co_occurrence,275
+Canada,GHG,co_occurrence,275
+Hong Kong,United Kingdom,co_occurrence,274
+China,artificial intelligence,co_occurrence,273
+China,Netherlands,co_occurrence,273
+CMS,Medicare,co_occurrence,273
+Securities and Exchange Commission,Asian,co_occurrence,272
+Independent Registered Public Accounting Firm,United States,co_occurrence,272
+Securities and Exchange Commission,Maryland,co_occurrence,271
+China,the U.S. Dollar,co_occurrence,271
+United States,Finance,co_occurrence,271
+United States,Black-Scholes,co_occurrence,271
+Securities and Exchange Commission,Capital Resources,co_occurrence,270
+the Clean Air Act,United States,co_occurrence,270
+North American,United Kingdom,co_occurrence,269
+China,Asian,co_occurrence,269
+Legal,United States,co_occurrence,269
+Securities and Exchange Commission,Independent Registered Public Accounting Firm,co_occurrence,268
+Securities and Exchange Commission,AOCI,co_occurrence,268
+North American,China,co_occurrence,268
+Environmental Protection Agency,FERC,co_occurrence,268
+Canada,Ireland,co_occurrence,268
+China,South Korea,co_occurrence,267
+the U.S. Treasury Department,United States,co_occurrence,267
+Brexit,the California Consumer Privacy Act,co_occurrence,267
+Ukraine,the California Consumer Privacy Act,co_occurrence,267
+Hong Kong,China,co_occurrence,266
+Mexico,Japan,co_occurrence,266
+the U.S. Dollar,United Kingdom,co_occurrence,265
+Office of Foreign Assets Control,United Kingdom,co_occurrence,265
+Securities and Exchange Commission,artificial intelligence,co_occurrence,264
+European Union,Healthcare,co_occurrence,264
+CMS,Medicaid,co_occurrence,263
+Healthcare,United Kingdom,co_occurrence,263
+Securities and Exchange Commission,Fair,co_occurrence,262
+China,Corporate,co_occurrence,262
+Canada,Federal Trade Commission,co_occurrence,262
+Securities and Exchange Commission,District Court,co_occurrence,261
+United States,Loss,co_occurrence,261
+European Union,Netherlands,co_occurrence,261
+United Kingdom,Cybersecurity,co_occurrence,261
+Securities and Exchange Commission,Black-Scholes,co_occurrence,260
+FCA,United Kingdom,co_occurrence,260
+Stockholder Matters,Principal Accounting Fees and Services,co_occurrence,260
+China,Principal Accounting Fees and Services,co_occurrence,259
+Switzerland,United Kingdom,co_occurrence,259
+Securities and Exchange Commission,the London Interbank Offered Rate,co_occurrence,258
+Securities and Exchange Commission,the Financial Conduct Authority,co_occurrence,258
+Foreign Corrupt Practices Act,India,co_occurrence,258
+Australian,United Kingdom,co_occurrence,258
+New Zealand,United States,co_occurrence,257
+Japan,Foreign Corrupt Practices Act,co_occurrence,257
+United Kingdom,GHG,co_occurrence,257
+Securities and Exchange Commission,Puerto Rico,co_occurrence,256
+Securities and Exchange Commission,Finance,co_occurrence,256
+the Financial Conduct Authority,European Union,co_occurrence,256
+Germany,Brazil,co_occurrence,255
+United States,Our Business and Industry,co_occurrence,255
+Securities and Exchange Commission,Customer,co_occurrence,254
+artificial intelligence,European Union,co_occurrence,254
+Canada,Department of Justice,co_occurrence,254
+Brexit,Australia,co_occurrence,254
+United States,the Patient Protection,co_occurrence,254
+European Union,the U.S. Dollar,co_occurrence,254
+Japan,Euro,co_occurrence,254
+United Kingdom,Credit Agreement,co_occurrence,254
+China,Critical Accounting Policies,co_occurrence,253
+artificial intelligence,climate change,co_occurrence,253
+PricewaterhouseCoopers LLP,United States,co_occurrence,253
+European Union,States,co_occurrence,253
+Securities and Exchange Commission,FDIC,co_occurrence,252
+Security Ownership of Certain Beneficial Owners and Management,Stockholder Matters,co_occurrence,252
+Food and Drug Administration,Japan,co_occurrence,251
+United States,Spain,co_occurrence,251
+United States,Inventories,co_occurrence,250
+Securities and Exchange Commission,Switzerland,co_occurrence,249
+Securities and Exchange Commission,FERC,co_occurrence,249
+China,States,co_occurrence,249
+United States,the Democratic Republic of Congo,co_occurrence,249
+European Union,HIPAA,co_occurrence,249
+India,the California Consumer Privacy Act,co_occurrence,249
+Securities and Exchange Commission,PricewaterhouseCoopers LLP,co_occurrence,248
+Switzerland,European Union,co_occurrence,248
+Foreign Corrupt Practices Act,the California Consumer Privacy Act,co_occurrence,247
+United Kingdom,Principal Accounting Fees and Services,co_occurrence,247
+Securities and Exchange Commission,Israel,co_occurrence,246
+ESG,the California Consumer Privacy Act,co_occurrence,246
+Medicare,HIPAA,co_occurrence,246
+China,the Private Securities Litigation Reform Act,co_occurrence,245
+China,Malaysia,co_occurrence,245
+China,Medicare,co_occurrence,245
+Financial Reporting,Internal Control,co_occurrence,245
+United States,tariffs,co_occurrence,245
+Ukraine,Australia,co_occurrence,245
+Brexit,the Tax Cuts and Jobs Act,co_occurrence,244
+Federal Trade Commission,the California Consumer Privacy Act,co_occurrence,244
+Japan,Taiwan,co_occurrence,244
+Ukraine,Foreign Corrupt Practices Act,co_occurrence,244
+Financial Reporting,Canada,co_occurrence,243
+France,Australia,co_occurrence,243
+United States,DIRECTORS,co_occurrence,243
+United States,BEPS,co_occurrence,243
+Securities and Exchange Commission,IP,co_occurrence,242
+Securities and Exchange Commission,the U.S. Department of Commerce,co_occurrence,242
+Securities and Exchange Commission,Inventories,co_occurrence,242
+China,Office of Foreign Assets Control,co_occurrence,242
+the Tax Cuts and Jobs Act,Japan,co_occurrence,242
+Australia,Euro,co_occurrence,242
+Securities and Exchange Commission,DIRECTORS,co_occurrence,241
+Italy,United Kingdom,co_occurrence,241
+Asian,European Union,co_occurrence,241
+the False Claims Act,United States,co_occurrence,241
+United States,ACA,co_occurrence,241
+European Union,IP,co_occurrence,241
+India,Euro,co_occurrence,241
+Securities and Exchange Commission,inflation,co_occurrence,240
+Disagreements with Accountants on Accounting and Financial Disclosure,Stockholder Matters,co_occurrence,240
+Canada,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,240
+Mexico,Ukraine,co_occurrence,240
+Securities and Exchange Commission,the Inflation Reduction Act,co_occurrence,239
+China,Israel,co_occurrence,239
+Section 13 or 15(d,FINANCIAL STATEMENT SCHEDULES,co_occurrence,239
+Securities and Exchange Commission,the U.S. Department,co_occurrence,238
+Singapore,Australia,co_occurrence,238
+United States,CFTC,co_occurrence,238
+Australia,the California Consumer Privacy Act,co_occurrence,238
+Securities and Exchange Commission,FCA,co_occurrence,237
+Canada,Netherlands,co_occurrence,237
+Securities and Exchange Commission,Intellectual Property,co_occurrence,236
+Moody s Investors Service,United Kingdom,co_occurrence,236
+Hong Kong,European Union,co_occurrence,236
+Canada,States,co_occurrence,236
+United States,ERISA,co_occurrence,236
+climate change,Cybersecurity,co_occurrence,236
+United Kingdom,Credit Facility,co_occurrence,236
+European Union,the Private Securities Litigation Reform Act,co_occurrence,235
+Taiwan,United Kingdom,co_occurrence,235
+Financial Reporting,Basis for Opinion The Company,co_occurrence,234
+Canada,the U.S. Congress,co_occurrence,234
+China,Switzerland,co_occurrence,233
+European Union,Israel,co_occurrence,233
+Securities and Exchange Commission,South Korea,co_occurrence,232
+Financial Reporting,Restricted,co_occurrence,232
+Medicaid,HIPAA,co_occurrence,232
+the Health Insurance Portability,European Union,co_occurrence,231
+United States,Connecticut,co_occurrence,231
+Securities and Exchange Commission,Principal Executive Officer,co_occurrence,230
+SUBSIDIARIES CONSOLIDATED BALANCE SHEETS,United States,co_occurrence,230
+United States,the European Economic Area,co_occurrence,230
+Intellectual Property,European Union,co_occurrence,229
+the State of Delaware,United States,co_occurrence,229
+United States,CFPB,co_occurrence,229
+China,IP,co_occurrence,228
+European Union,South Korea,co_occurrence,228
+Corporate,United Kingdom,co_occurrence,228
+Securities and Exchange Commission,Loss,co_occurrence,226
+Securities and Exchange Commission,Italy,co_occurrence,226
+Brexit,Foreign Corrupt Practices Act,co_occurrence,226
+Ukraine,Brazil,co_occurrence,226
+Euro,Russia,co_occurrence,226
+China,Credit Facility,co_occurrence,225
+Canada,ESG,co_occurrence,225
+European Union,the U.S. Department of Commerce,co_occurrence,225
+U.S. Treasury,Federal Reserve,co_occurrence,225
+Securities and Exchange Commission,CFTC,co_occurrence,224
+Germany,Russia,co_occurrence,224
+Germany,Mexico,co_occurrence,224
+the Clean Air Act,Environmental Protection Agency,co_occurrence,224
+United States,Argentina,co_occurrence,224
+Australian,Australia,co_occurrence,224
+Securities and Exchange Commission,the Democratic Republic of Congo,co_occurrence,223
+Intellectual Property,China,co_occurrence,223
+Canada,Corporate,co_occurrence,223
+United States,Principal Executive Officer,co_occurrence,223
+United States,the U.K. Bribery Act,co_occurrence,223
+European Union,the European Economic Area,co_occurrence,223
+Securities and Exchange Commission,E.U.,co_occurrence,222
+Moody s Investors Service,European Union,co_occurrence,222
+Singapore,India,co_occurrence,222
+Brexit,Japan,co_occurrence,222
+Mexico,Foreign Corrupt Practices Act,co_occurrence,222
+FINANCIAL STATEMENT SCHEDULES,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,222
+Securities and Exchange Commission,Basis for Opinion These,co_occurrence,221
+North American,European Union,co_occurrence,221
+Singapore,Canada,co_occurrence,221
+New Zealand,Australia,co_occurrence,221
+Food and Drug Administration,HIPAA,co_occurrence,221
+United States,Basis for Opinion These,co_occurrence,221
+South Korea,United Kingdom,co_occurrence,221
+China,the U.S. Department of Commerce,co_occurrence,220
+Canada,Medicare,co_occurrence,220
+inflation,climate change,co_occurrence,220
+the Paris Agreement,United States,co_occurrence,220
+GHG,FERC,co_occurrence,220
+Securities and Exchange Commission,Malaysia,co_occurrence,219
+Italy,China,co_occurrence,219
+China,Healthcare,co_occurrence,219
+Brexit,India,co_occurrence,219
+the Inflation Reduction Act,European Union,co_occurrence,219
+United States,Google,co_occurrence,219
+the London Interbank Offered Rate,United Kingdom,co_occurrence,219
+Environmental Protection Agency,Russia,co_occurrence,218
+Japan,Ukraine,co_occurrence,218
+Securities and Exchange Commission,SUBSIDIARIES CONSOLIDATED BALANCE SHEETS,co_occurrence,217
+China,General Counsel,co_occurrence,217
+Canada,the Private Securities Litigation Reform Act,co_occurrence,217
+European Union,FCA,co_occurrence,217
+European Union,Critical Accounting Policies,co_occurrence,217
+Foreign Corrupt Practices Act,Australia,co_occurrence,217
+HIPAA,United Kingdom,co_occurrence,217
+China,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,216
+Euro,Brazil,co_occurrence,216
+Securities and Exchange Commission,Legal,co_occurrence,214
+CMS,European Union,co_occurrence,214
+China,Credit Agreement,co_occurrence,213
+China,Medicaid,co_occurrence,213
+Canada,FINANCIAL STATEMENT SCHEDULES,co_occurrence,213
+Canada,Liquidity and Capital Resources,co_occurrence,213
+Canada,Credit Facility,co_occurrence,213
+Canada,FCPA,co_occurrence,213
+Brexit,Russia,co_occurrence,213
+European Union,Colorado,co_occurrence,213
+European Union,Australian,co_occurrence,213
+Ukraine,climate change,co_occurrence,213
+Germany,Euro,co_occurrence,212
+China,Foreign Currency Translation,co_occurrence,212
+China,E.U.,co_occurrence,212
+China,Australian,co_occurrence,212
+Securities and Exchange Commission,HIPAA,co_occurrence,211
+Germany,Ireland,co_occurrence,211
+Canada,the Delaware General Corporation Law,co_occurrence,211
+Canada,Restricted,co_occurrence,211
+Food and Drug Administration,Russia,co_occurrence,211
+China,Massachusetts,co_occurrence,210
+CMS,Food and Drug Administration,co_occurrence,210
+European Union,the Democratic Republic of Congo,co_occurrence,210
+Moody s,United Kingdom,co_occurrence,209
+France,Japan,co_occurrence,209
+Section 13 or 15(d,Principal Executive Officer,co_occurrence,209
+United Kingdom,Colorado,co_occurrence,209
+Securities and Exchange Commission,the State of Delaware,co_occurrence,208
+Securities and Exchange Commission,Spain,co_occurrence,208
+Germany,Italy,co_occurrence,208
+Canada,Credit Agreement,co_occurrence,208
+the Tax Cuts and Jobs Act,India,co_occurrence,208
+Ukraine,Cybersecurity,co_occurrence,208
+Spain,United Kingdom,co_occurrence,208
+United Kingdom,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,208
+New Zealand,United Kingdom,co_occurrence,207
+BEPS,European Union,co_occurrence,207
+Federal Reserve,Russia,co_occurrence,207
+the U.S. Supreme Court,European Union,co_occurrence,206
+Securities and Exchange Commission,Registrant s Common Equity,co_occurrence,206
+Registrant s Common Equity,United States,co_occurrence,206
+Italy,European Union,co_occurrence,206
+China,inflation,co_occurrence,206
+Asian,United Kingdom,co_occurrence,206
+Brexit,Euro,co_occurrence,206
+the Tax Cuts and Jobs Act,Australia,co_occurrence,206
+Securities and Exchange Commission,Connecticut,co_occurrence,205
+China,Financial Reporting,co_occurrence,205
+HHS,United States,co_occurrence,205
+Massachusetts,European Union,co_occurrence,205
+Canada,Foreign Currency Translation,co_occurrence,205
+Canada,New Zealand,co_occurrence,205
+Section 13 or 15(d,Principal Accounting Fees and Services,co_occurrence,205
+climate change,Russia,co_occurrence,205
+Canada,Intangible Assets,co_occurrence,204
+Canada,Australian,co_occurrence,204
+United States,CPRA,co_occurrence,204
+United States,Fitch,co_occurrence,204
+Contingencies,United Kingdom,co_occurrence,204
+Australia,Ireland,co_occurrence,204
+the European Economic Area,United Kingdom,co_occurrence,204
+Brexit,E.U.,co_occurrence,203
+Management s Report on Internal Control,Restricted,co_occurrence,203
+Securities and Exchange Commission,the U.S. Treasury Department,co_occurrence,202
+China,the Inflation Reduction Act,co_occurrence,202
+HHS,Medicaid,co_occurrence,202
+HHS,Medicare,co_occurrence,202
+European Union,Malaysia,co_occurrence,202
+FCPA,Russia,co_occurrence,202
+Japan,U.S. Treasury,co_occurrence,202
+climate change,United Kingdom,co_occurrence,202
+Moody s Investors Service,China,co_occurrence,201
+Financial Reporting,Critical Accounting Policies,co_occurrence,201
+Massachusetts,United Kingdom,co_occurrence,201
+the Health Insurance Portability,HIPAA,co_occurrence,201
+artificial intelligence,United Kingdom,co_occurrence,201
+Canada,Cybersecurity,co_occurrence,201
+European Union,the London Interbank Offered Rate,co_occurrence,201
+Japan,Ireland,co_occurrence,201
+the Private Securities Litigation Reform Act,United Kingdom,co_occurrence,201
+Disagreements with Accountants on Accounting and Financial Disclosure,Canada,co_occurrence,200
+Canada,Taiwan,co_occurrence,200
+European Union,the U.S. Department,co_occurrence,200
+Japan,South Korea,co_occurrence,199
+Federal Reserve,the California Consumer Privacy Act,co_occurrence,199
+Liquidity and Capital Resources,Critical Accounting Policies,co_occurrence,199
+United Kingdom,Stockholder Matters,co_occurrence,199
+Securities and Exchange Commission,the Health Insurance Portability,co_occurrence,198
+Financial Reporting,FINANCIAL STATEMENT SCHEDULES,co_occurrence,198
+Russia,GHG,co_occurrence,198
+Registrant s Common Equity,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,197
+CMS,HIPAA,co_occurrence,197
+Internal Control,Management s Report on Internal Control,co_occurrence,197
+Canada,Stockholder Matters,co_occurrence,197
+the U.S. Dollar,Euro,co_occurrence,197
+Securities and Exchange Commission,New Zealand,co_occurrence,196
+China,tariffs,co_occurrence,196
+Medicaid,Canada,co_occurrence,196
+artificial intelligence,Cybersecurity,co_occurrence,196
+Canada,Spain,co_occurrence,196
+ACA,Medicare,co_occurrence,196
+Management s Discussion and Analysis of Financial Condition,Foreign Corrupt Practices Act,co_occurrence,196
+India,Ireland,co_occurrence,196
+the Inflation Reduction Act,Ukraine,co_occurrence,195
+Russia,Israel,co_occurrence,195
+United Kingdom,Israel,co_occurrence,195
+Securities and Exchange Commission,CFPB,co_occurrence,194
+Canada,Management s Report on Internal Control,co_occurrence,194
+Canada,Item 1A. Risk Factors,co_occurrence,194
+tariffs,climate change,co_occurrence,194
+European Union,Corporate,co_occurrence,194
+Management s Discussion and Analysis of Financial Condition,Principal Accounting Fees and Services,co_occurrence,194
+Japan,the California Consumer Privacy Act,co_occurrence,194
+Ukraine,Israel,co_occurrence,194
+Restricted,FINANCIAL STATEMENT SCHEDULES,co_occurrence,194
+Federal Reserve,FDIC,co_occurrence,194
+Australia,Netherlands,co_occurrence,194
+China,Colorado,co_occurrence,193
+BEPS,United Kingdom,co_occurrence,193
+Ukraine,Federal Reserve,co_occurrence,193
+Russia,Cybersecurity,co_occurrence,193
+Disagreements with Accountants on Accounting and Financial Disclosure,China,co_occurrence,192
+Medicaid,ACA,co_occurrence,192
+Federal Trade Commission,Russia,co_occurrence,192
+ESG,Foreign Corrupt Practices Act,co_occurrence,192
+Italy,Canada,co_occurrence,191
+FINANCIAL STATEMENT SCHEDULES,Principal Executive Officer,co_occurrence,191
+the California Consumer Privacy Act,Brazil,co_occurrence,191
+Securities and Exchange Commission,ERISA,co_occurrence,190
+China,Contingencies,co_occurrence,190
+China,Spain,co_occurrence,190
+China,Stockholder Matters,co_occurrence,190
+Brexit,Brazil,co_occurrence,190
+European Union,Stockholder Matters,co_occurrence,190
+Securities and Exchange Commission,Our Business and Industry,co_occurrence,189
+China,Liquidity and Capital Resources,co_occurrence,189
+China,Regulation S-K,co_occurrence,189
+Environmental Protection Agency,Mexico,co_occurrence,189
+European Union,General Counsel,co_occurrence,189
+FCPA,Japan,co_occurrence,189
+United Kingdom,Significant Accounting Policies,co_occurrence,189
+Hong Kong,Canada,co_occurrence,188
+Moody s,European Union,co_occurrence,188
+Acquisitions,Canada,co_occurrence,188
+European Union,Puerto Rico,co_occurrence,188
+FCPA,Foreign Corrupt Practices Act,co_occurrence,188
+United Kingdom,Puerto Rico,co_occurrence,188
+the U.S. Supreme Court,United Kingdom,co_occurrence,187
+China,Item 1A. Risk Factors,co_occurrence,187
+Moody s,Fitch,co_occurrence,187
+the Health Insurance Portability,United Kingdom,co_occurrence,187
+the Inflation Reduction Act,Russia,co_occurrence,187
+European Union,Principal Accounting Fees and Services,co_occurrence,187
+United Kingdom,General Counsel,co_occurrence,187
+Securities and Exchange Commission,Argentina,co_occurrence,186
+Germany,the Tax Cuts and Jobs Act,co_occurrence,186
+Financial Reporting,U.S. Treasury,co_occurrence,186
+the U.S. Treasury Department,United Kingdom,co_occurrence,186
+the Financial Conduct Authority,Federal Reserve,co_occurrence,186
+Canada,South Korea,co_occurrence,186
+Brexit,Federal Reserve,co_occurrence,186
+Foreign Currency Translation,United Kingdom,co_occurrence,186
+Management s Report on Internal Control,Basis for Opinion The Company,co_occurrence,186
+Management s Discussion and Analysis of Financial Condition,Russia,co_occurrence,186
+China,Revolving Credit Facility,co_occurrence,185
+ESG,India,co_occurrence,185
+U.S. Treasury,Critical Accounting Policies,co_occurrence,185
+China,Intangible Assets,co_occurrence,184
+China,the Democratic Republic of Congo,co_occurrence,184
+Financial Reporting,Section 13 or 15(d,co_occurrence,184
+Mexico,Euro,co_occurrence,184
+inflation,European Union,co_occurrence,184
+the Tax Cuts and Jobs Act,Russia,co_occurrence,184
+Contractual Obligations,Canada,co_occurrence,183
+artificial intelligence,Ukraine,co_occurrence,183
+Canada,the U.S. Dollar,co_occurrence,183
+Federal Trade Commission,Ukraine,co_occurrence,183
+European Union,the U.K. Bribery Act,co_occurrence,183
+Germany,Ukraine,co_occurrence,182
+Moody s Investors Service,Canada,co_occurrence,182
+Disagreements with Accountants on Accounting and Financial Disclosure,United Kingdom,co_occurrence,182
+Illinois,United Kingdom,co_occurrence,182
+the False Claims Act,Medicare,co_occurrence,182
+ESG,Federal Reserve,co_occurrence,182
+Management s Discussion and Analysis of Financial Condition,Japan,co_occurrence,182
+Restricted,U.S. Treasury,co_occurrence,182
+Restricted,Black-Scholes,co_occurrence,182
+the U.S. Congress,Russia,co_occurrence,182
+Controller,General Counsel,co_occurrence,182
+Italy,Australia,co_occurrence,181
+Financial Reporting,PricewaterhouseCoopers LLP,co_occurrence,181
+CMS,United Kingdom,co_occurrence,181
+Canada,Switzerland,co_occurrence,181
+Food and Drug Administration,Federal Trade Commission,co_occurrence,181
+Management s Discussion and Analysis of Financial Condition,Ukraine,co_occurrence,181
+New Jersey,United Kingdom,co_occurrence,181
+Securities and Exchange Commission,tariffs,co_occurrence,180
+Securities and Exchange Commission,Fitch,co_occurrence,180
+Germany,Netherlands,co_occurrence,180
+Registrant s Common Equity,Principal Accounting Fees and Services,co_occurrence,180
+Financial Reporting,Principal Accounting Fees and Services,co_occurrence,180
+Legal,European Union,co_occurrence,180
+Canada,climate change,co_occurrence,180
+IP,United Kingdom,co_occurrence,180
+the U.S. Department,United Kingdom,co_occurrence,180
+Intellectual Property,United Kingdom,co_occurrence,179
+Financial Reporting,Black-Scholes,co_occurrence,179
+Canada,Healthcare,co_occurrence,179
+Intangible Assets,United Kingdom,co_occurrence,179
+Securities and Exchange Commission,CMS,co_occurrence,178
+Internal Control,Basis for Opinion The Company,co_occurrence,178
+Canada,Colorado,co_occurrence,178
+France,India,co_occurrence,178
+the False Claims Act,European Union,co_occurrence,178
+European Union,CPRA,co_occurrence,178
+FCPA,India,co_occurrence,178
+Japan,Malaysia,co_occurrence,178
+the U.S. Department of Commerce,United Kingdom,co_occurrence,178
+Germany,Singapore,co_occurrence,177
+European Union,Spain,co_occurrence,177
+the U.K. Bribery Act,United Kingdom,co_occurrence,177
+China,Argentina,co_occurrence,176
+Environmental Protection Agency,Management s Discussion and Analysis of Financial Condition,co_occurrence,176
+artificial intelligence,inflation,co_occurrence,176
+Canada,Regulation S-K,co_occurrence,176
+Federal Trade Commission,Foreign Corrupt Practices Act,co_occurrence,176
+Management s Report on Internal Control,Critical Accounting Policies,co_occurrence,176
+ACA,European Union,co_occurrence,176
+Management s Discussion and Analysis of Financial Condition,the California Consumer Privacy Act,co_occurrence,176
+Argentina,Brazil,co_occurrence,176
+Hong Kong,Japan,co_occurrence,175
+Disagreements with Accountants on Accounting and Financial Disclosure,FINANCIAL STATEMENT SCHEDULES,co_occurrence,175
+China,New Zealand,co_occurrence,175
+Federal Trade Commission,India,co_occurrence,175
+Section 13 or 15(d,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,175
+the U.S. Supreme Court,China,co_occurrence,174
+Contractual Obligations,Critical Accounting Policies,co_occurrence,174
+Environmental Protection Agency,the Paris Agreement,co_occurrence,174
+Canada,Office of Foreign Assets Control,co_occurrence,174
+Brexit,FCPA,co_occurrence,174
+European Union,Our Business and Industry,co_occurrence,174
+Healthcare,Medicare,co_occurrence,174
+Japan,Department of Justice,co_occurrence,174
+Japan,the Delaware General Corporation Law,co_occurrence,174
+Japan,Medicare,co_occurrence,174
+Restricted,Basis for Opinion The Company,co_occurrence,174
+CPRA,the California Consumer Privacy Act,co_occurrence,174
+Federal Reserve,Australia,co_occurrence,174
+Section 13 or 15(d,Credit Agreement,co_occurrence,174
+Liquidity and Capital Resources,United Kingdom,co_occurrence,174
+United Kingdom,Item 1A. Risk Factors,co_occurrence,174
+Securities and Exchange Commission,Google,co_occurrence,173
+Germany,Foreign Corrupt Practices Act,co_occurrence,173
+Singapore,Malaysia,co_occurrence,173
+Switzerland,Australia,co_occurrence,173
+Foreign Corrupt Practices Act,Brazil,co_occurrence,173
+the Patient Protection,Medicare,co_occurrence,173
+the U.S. Supreme Court,Canada,co_occurrence,172
+Food and Drug Administration,FCPA,co_occurrence,172
+Regulation S-K,United Kingdom,co_occurrence,172
+European Union,Credit Agreement,co_occurrence,172
+Restricted,Section 13 or 15(d,co_occurrence,172
+Hong Kong,Australia,co_occurrence,171
+Independent Registered Public Accounting Firm,Section 13 or 15(d,co_occurrence,171
+China,Inventories,co_occurrence,171
+Medicaid,the False Claims Act,co_occurrence,171
+Canada,District Court,co_occurrence,171
+New Zealand,European Union,co_occurrence,171
+France,Brazil,co_occurrence,171
+European Union,Item 1A. Risk Factors,co_occurrence,171
+the Delaware General Corporation Law,the California Consumer Privacy Act,co_occurrence,171
+Foreign Corrupt Practices Act,climate change,co_occurrence,171
+Restricted,Critical Accounting Policies,co_occurrence,171
+Malaysia,United Kingdom,co_occurrence,171
+Australian,Euro,co_occurrence,171
+Taiwan,Russia,co_occurrence,171
+China,Controller,co_occurrence,170
+Financial Reporting,United Kingdom,co_occurrence,170
+the Health Insurance Portability,Medicare,co_occurrence,170
+the U.S. Treasury Department,European Union,co_occurrence,170
+Food and Drug Administration,Australia,co_occurrence,170
+the Paris Agreement,GHG,co_occurrence,170
+Management s Discussion and Analysis of Financial Condition,Federal Reserve,co_occurrence,170
+Securities and Exchange Commission,BEPS,co_occurrence,169
+North American,Environmental Protection Agency,co_occurrence,169
+HHS,CMS,co_occurrence,169
+Massachusetts,Canada,co_occurrence,169
+ESG,Cybersecurity,co_occurrence,169
+the Tax Cuts and Jobs Act,Euro,co_occurrence,169
+Japan,Critical Accounting Policies,co_occurrence,169
+the California Consumer Privacy Act,Cybersecurity,co_occurrence,169
+Germany,Brexit,co_occurrence,168
+Germany,Spain,co_occurrence,168
+China,Moody s,co_occurrence,168
+Financial Reporting,Liquidity and Capital Resources,co_occurrence,168
+Illinois,Canada,co_occurrence,168
+Canada,Black-Scholes,co_occurrence,168
+Mexico,the Tax Cuts and Jobs Act,co_occurrence,168
+Food and Drug Administration,Ukraine,co_occurrence,168
+tariffs,European Union,co_occurrence,168
+Foreign Corrupt Practices Act,Euro,co_occurrence,168
+Corporate,General Counsel,co_occurrence,168
+Pennsylvania,United Kingdom,co_occurrence,167
+Securities and Exchange Commission,the European Economic Area,co_occurrence,167
+China,Management s Report on Internal Control,co_occurrence,167
+Acquisitions,United Kingdom,co_occurrence,167
+the State of Delaware,European Union,co_occurrence,167
+Singapore,Russia,co_occurrence,167
+the Tax Cuts and Jobs Act,U.S. Treasury,co_occurrence,167
+Independent Registered Public Accounting Firm,FINANCIAL STATEMENT SCHEDULES,co_occurrence,166
+China,HIPAA,co_occurrence,166
+the Health Insurance Portability,Food and Drug Administration,co_occurrence,166
+Canada,Fair,co_occurrence,166
+Canada,Significant Accounting Policies,co_occurrence,166
+European Union,Contingencies,co_occurrence,166
+FCPA,the California Consumer Privacy Act,co_occurrence,166
+DIRECTORS,FINANCIAL STATEMENT SCHEDULES,co_occurrence,166
+Australia,Principal Accounting Fees and Services,co_occurrence,166
+FINANCIAL STATEMENT SCHEDULES,Credit Agreement,co_occurrence,166
+Moody s Investors Service,Moody s,co_occurrence,165
+China,FINANCIAL STATEMENT SCHEDULES,co_occurrence,165
+China,BEPS,co_occurrence,165
+Medicaid,Japan,co_occurrence,165
+Management s Report on Internal Control,FINANCIAL STATEMENT SCHEDULES,co_occurrence,165
+European Union,Google,co_occurrence,165
+Management s Discussion and Analysis of Financial Condition,India,co_occurrence,165
+FCA,Federal Reserve,co_occurrence,165
+U.S. Treasury,States,co_occurrence,165
+Registrant s Common Equity,Stockholder Matters,co_occurrence,164
+Internal Control,FINANCIAL STATEMENT SCHEDULES,co_occurrence,164
+artificial intelligence,Russia,co_occurrence,164
+ESG,GHG,co_occurrence,164
+the Tax Cuts and Jobs Act,Foreign Corrupt Practices Act,co_occurrence,164
+Management s Discussion and Analysis of Financial Condition,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,164
+Ukraine,Taiwan,co_occurrence,164
+Ukraine,GHG,co_occurrence,164
+CPRA,United Kingdom,co_occurrence,164
+Securities and Exchange Commission,the Clean Air Act,co_occurrence,163
+North American,Australia,co_occurrence,163
+North American,Mexico,co_occurrence,163
+China,Legal,co_occurrence,163
+China,the London Interbank Offered Rate,co_occurrence,163
+Financial Reporting,Foreign Currency Translation,co_occurrence,163
+the Tax Cuts and Jobs Act,the California Consumer Privacy Act,co_occurrence,163
+Intangible Assets,Critical Accounting Policies,co_occurrence,163
+Japan,Netherlands,co_occurrence,163
+Department of Justice,Federal Reserve,co_occurrence,163
+India,Federal Reserve,co_occurrence,163
+U.S. Treasury,Australia,co_occurrence,163
+Pennsylvania,Canada,co_occurrence,162
+China,District Court,co_occurrence,162
+Moody s,Canada,co_occurrence,162
+Internal Control,Section 13 or 15(d,co_occurrence,162
+Brexit,the U.S. Congress,co_occurrence,162
+Food and Drug Administration,Foreign Corrupt Practices Act,co_occurrence,162
+France,Russia,co_occurrence,162
+inflation,tariffs,co_occurrence,162
+European Union,Credit Facility,co_occurrence,162
+Japan,Principal Accounting Fees and Services,co_occurrence,162
+Australia,States,co_occurrence,162
+Critical Accounting Policies,Principal Accounting Fees and Services,co_occurrence,162
+Pennsylvania,New Jersey,co_occurrence,161
+Securities and Exchange Commission,CPRA,co_occurrence,161
+Singapore,Brazil,co_occurrence,161
+Federal Trade Commission,ESG,co_occurrence,161
+the Tax Cuts and Jobs Act,Brazil,co_occurrence,161
+European Union,New Jersey,co_occurrence,161
+Australia,Spain,co_occurrence,161
+FINANCIAL STATEMENT SCHEDULES,United Kingdom,co_occurrence,161
+Securities and Exchange Commission,Limitations of Internal Control,co_occurrence,160
+Securities and Exchange Commission,ACA,co_occurrence,160
+China,Customer,co_occurrence,160
+China,Acquisitions,co_occurrence,160
+Financial Reporting,Credit Agreement,co_occurrence,160
+Limitations of Internal Control,United States,co_occurrence,160
+Medicaid,the Patient Protection,co_occurrence,160
+the Inflation Reduction Act,United Kingdom,co_occurrence,160
+Department of Justice,Medicare,co_occurrence,160
+Ukraine,the U.S. Congress,co_occurrence,160
+Connecticut,United Kingdom,co_occurrence,160
+FDIC,United Kingdom,co_occurrence,160
+Securities and Exchange Commission,the Paris Agreement,co_occurrence,159
+Italy,France,co_occurrence,159
+Financial Reporting,Limitations of Internal Control,co_occurrence,159
+Medicaid,Healthcare,co_occurrence,159
+Canada,New Jersey,co_occurrence,159
+Canada,Malaysia,co_occurrence,159
+Management s Report on Internal Control,Black-Scholes,co_occurrence,159
+Management s Report on Internal Control,U.S. Treasury,co_occurrence,159
+FCPA,Brazil,co_occurrence,159
+Japan,Federal Reserve,co_occurrence,159
+the Private Securities Litigation Reform Act,Principal Accounting Fees and Services,co_occurrence,159
+Securities and Exchange Commission,the Patient Protection,co_occurrence,158
+Germany,Switzerland,co_occurrence,158
+China,New Jersey,co_occurrence,158
+artificial intelligence,Canada,co_occurrence,158
+Canada,Basis for Opinion The Company,co_occurrence,158
+ESG,climate change,co_occurrence,158
+the Tax Cuts and Jobs Act,Critical Accounting Policies,co_occurrence,158
+the Tax Cuts and Jobs Act,Management s Discussion and Analysis of Financial Condition,co_occurrence,158
+CFPB,Federal Reserve,co_occurrence,158
+Australia,Credit Facility,co_occurrence,158
+Financial Reporting,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,157
+SUBSIDIARIES CONSOLIDATED BALANCE SHEETS,Canada,co_occurrence,157
+Contractual Obligations,United Kingdom,co_occurrence,157
+Environmental Protection Agency,Australia,co_occurrence,157
+Canada,Puerto Rico,co_occurrence,157
+Canada,Controller,co_occurrence,157
+Canada,the U.S. Department,co_occurrence,157
+Federal Trade Commission,Australia,co_occurrence,157
+the Delaware General Corporation Law,India,co_occurrence,157
+China,Puerto Rico,co_occurrence,156
+China,the Health Insurance Portability,co_occurrence,156
+CMS,ACA,co_occurrence,156
+Internal Control,PricewaterhouseCoopers LLP,co_occurrence,156
+Mexico,GHG,co_occurrence,156
+Food and Drug Administration,ACA,co_occurrence,156
+Ukraine,Euro,co_occurrence,156
+the Delaware General Corporation Law,Russia,co_occurrence,156
+District Court,United Kingdom,co_occurrence,156
+China,Finance,co_occurrence,155
+China,the U.S. Department,co_occurrence,155
+Singapore,Mexico,co_occurrence,155
+Canada,General Counsel,co_occurrence,155
+Management s Report on Internal Control,Section 13 or 15(d,co_occurrence,155
+European Union,the Patient Protection,co_occurrence,155
+FCPA,Ukraine,co_occurrence,155
+Foreign Corrupt Practices Act,Office of Foreign Assets Control,co_occurrence,155
+Restricted,Credit Agreement,co_occurrence,155
+United Kingdom,the Democratic Republic of Congo,co_occurrence,155
+Securities and Exchange Commission,the False Claims Act,co_occurrence,154
+China,Restricted,co_occurrence,154
+Canada,Section 13 or 15(d,co_occurrence,154
+inflation,Cybersecurity,co_occurrence,154
+Regulation S-K,European Union,co_occurrence,154
+Foreign Currency Translation,Critical Accounting Policies,co_occurrence,154
+Management s Discussion and Analysis of Financial Condition,Critical Accounting Policies,co_occurrence,154
+Department of Justice,Australia,co_occurrence,154
+Foreign Corrupt Practices Act,Cybersecurity,co_occurrence,154
+Federal Reserve,CFTC,co_occurrence,154
+Credit Agreement,Principal Accounting Fees and Services,co_occurrence,154
+the Clean Air Act,GHG,co_occurrence,153
+China,the European Economic Area,co_occurrence,153
+Financial Reporting,Contractual Obligations,co_occurrence,153
+Internal Control,Restricted,co_occurrence,153
+Limitations of Internal Control,Basis for Opinion The Company,co_occurrence,153
+the Tax Cuts and Jobs Act,Basis for Opinion The Company,co_occurrence,153
+Foreign Currency Translation,Intangible Assets,co_occurrence,153
+Ohio,United Kingdom,co_occurrence,153
+South Korea,Australia,co_occurrence,153
+India,Taiwan,co_occurrence,153
+Basis for Opinion The Company,Basis for Opinion These,co_occurrence,153
+the U.S. Supreme Court,Environmental Protection Agency,co_occurrence,152
+Germany,the California Consumer Privacy Act,co_occurrence,152
+Disagreements with Accountants on Accounting and Financial Disclosure,European Union,co_occurrence,152
+Disagreements with Accountants on Accounting and Financial Disclosure,Registrant s Common Equity,co_occurrence,152
+Environmental Protection Agency,Ukraine,co_occurrence,152
+the Health Insurance Portability,Medicaid,co_occurrence,152
+the Financial Conduct Authority,Canada,co_occurrence,152
+the False Claims Act,United Kingdom,co_occurrence,152
+ESG,Australia,co_occurrence,152
+FCPA,Australia,co_occurrence,152
+Argentina,United Kingdom,co_occurrence,152
+the U.S. Congress,the California Consumer Privacy Act,co_occurrence,152
+Liquidity and Capital Resources,Principal Accounting Fees and Services,co_occurrence,152
+Securities and Exchange Commission,the U.K. Bribery Act,co_occurrence,151
+Internal Control,Critical Accounting Policies,co_occurrence,151
+artificial intelligence,Foreign Corrupt Practices Act,co_occurrence,151
+artificial intelligence,tariffs,co_occurrence,151
+Canada,Ohio,co_occurrence,151
+Canada,Inventories,co_occurrence,151
+European Union,District Court,co_occurrence,151
+European Union,ERISA,co_occurrence,151
+Management s Discussion and Analysis of Financial Condition,Australia,co_occurrence,151
+Loss,United Kingdom,co_occurrence,151
+U.S. Treasury,Principal Accounting Fees and Services,co_occurrence,151
+Our Business and Industry,United Kingdom,co_occurrence,151
+Internal Control,Canada,co_occurrence,150
+Medicaid,Department of Justice,co_occurrence,150
+Canada,Finance,co_occurrence,150
+Switzerland,Japan,co_occurrence,150
+European Union,Security Ownership of Certain Beneficial Owners and Management,co_occurrence,150
+European Union,Argentina,co_occurrence,150
+Ukraine,the Delaware General Corporation Law,co_occurrence,150
