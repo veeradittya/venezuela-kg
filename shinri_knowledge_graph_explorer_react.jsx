@@ -526,6 +526,7 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [selectedNode, setSelectedNode] = useState(null);
   const [selectedEdge, setSelectedEdge] = useState(null);
+  const [panelOpen, setPanelOpen] = useState(true);
 
   const [physics, setPhysics] = useState({ charge: -200, gravity: 0.08, linkDistance: 250, linkDistVar: 0.3, collision: true, wiggle: false, freeze: false });
   const [nodeVis, setNodeVis] = useState({ size: 1.0, fill: "#ffffff", stroke: "#cccccc", strokeWidth: 1, labelColor: "#1a1a1a", showLabels: true, sizeByStrength: true, useTypeFill: true });
@@ -600,158 +601,168 @@ export default function App() {
   const lSet = (k) => (v) => setLinkVis((o) => ({ ...o, [k]: v }));
 
   return (
-    <div className="h-screen w-full bg-neutral-50">
-      <div className="mx-auto flex h-full max-w-[1600px] flex-col">
-        <header className="flex items-center justify-between px-4 py-3">
-          <div>
-            <div className="text-lg font-semibold">Shinri — Venezuela Knowledge Graph</div>
-            <div className="text-xs text-black/60">68 entities · 88 edges — sourced from Reuters, AP, NYT, WSJ, FT, BBC, CFR, ICG, Atlantic Council</div>
-          </div>
-          <div className="flex items-center gap-2 text-xs">
-            <div className="rounded-full border border-black/10 bg-white px-3 py-1">Nodes <b className="tabular-nums">{stats.n}</b></div>
-            <div className="rounded-full border border-black/10 bg-white px-3 py-1">Edges <b className="tabular-nums">{stats.e}</b></div>
-            <div className="rounded-full border border-green-200 bg-green-50 px-2 py-1">+{stats.pos}</div>
-            <div className="rounded-full border border-red-200 bg-red-50 px-2 py-1">−{stats.neg}</div>
-            {stats.neu > 0 && <div className="rounded-full border border-black/10 bg-white px-2 py-1">·{stats.neu}</div>}
-          </div>
-        </header>
+    <div className="h-screen w-full">
+      <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} onEdgesChange={onEdgesChange} onNodeClick={onNodeClick} onEdgeClick={onEdgeClick} fitView fitViewOptions={{ padding: 0.2 }} proOptions={{ hideAttribution: true }}>
+        <Background />
+        <Controls position="bottom-right" />
+        <MiniMap pannable zoomable style={{ bottom: 10, left: 10 }} />
 
-        <div className="flex min-h-0 flex-1 gap-4 px-4 pb-4">
-          <div className="w-[300px] shrink-0 space-y-3 overflow-y-auto pr-1">
+        {/* ── Floating header bar ── */}
+        <Panel position="top-center">
+          <div className="flex items-center gap-3 rounded-2xl border border-black/10 bg-white/90 px-4 py-2 shadow-lg backdrop-blur-xl">
+            <span className="text-sm font-semibold whitespace-nowrap">Shinri — Venezuela KG</span>
+            <div className="h-4 w-px bg-black/10" />
+            <div className="flex items-center gap-1.5 text-xs">
+              <span className="rounded-full border border-black/10 bg-white px-2 py-0.5 tabular-nums">Nodes <b>{stats.n}</b></span>
+              <span className="rounded-full border border-black/10 bg-white px-2 py-0.5 tabular-nums">Edges <b>{stats.e}</b></span>
+              <span className="rounded-full border border-green-200 bg-green-50 px-2 py-0.5">+{stats.pos}</span>
+              <span className="rounded-full border border-red-200 bg-red-50 px-2 py-0.5">−{stats.neg}</span>
+              {stats.neu > 0 && <span className="rounded-full border border-black/10 bg-white px-2 py-0.5">·{stats.neu}</span>}
+            </div>
+          </div>
+        </Panel>
 
-            <Card title="Explore">
-              <div className="space-y-3">
-                <Select label="Center node" value={centerId} onChange={setCenterId} options={centerOptions} />
-                <Select label="Hop direction" value={hopDirection} onChange={setHopDirection} options={[
-                  { value: "both", label: "Both (in + out)" }, { value: "in", label: "Upstream (causes)" }, { value: "out", label: "Downstream (effects)" },
-                ]} />
-                <Slider label="Max hops" value={hops} min={1} max={5} step={1} onChange={setHops} />
-                <Select label="Layout" value={layoutMode} onChange={setLayoutMode} options={[
-                  { value: "LR", label: "DAG Left → Right" }, { value: "TB", label: "DAG Top → Bottom" }, { value: "force", label: "⚛ Force (physics)" },
-                ]} />
+        {/* ── Floating left panel toggle ── */}
+        <Panel position="top-left">
+          <div className="flex flex-col gap-2">
+            <button
+              onClick={() => setPanelOpen((v) => !v)}
+              className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 bg-white/90 shadow-lg backdrop-blur-xl text-sm hover:bg-white transition-colors"
+              title={panelOpen ? "Collapse panel" : "Open panel"}
+            >
+              {panelOpen ? "✕" : "☰"}
+            </button>
+
+            {/* ── Controls panel ── */}
+            {panelOpen && (
+              <div className="w-[280px] max-h-[calc(100vh-120px)] overflow-y-auto space-y-2 rounded-2xl border border-black/10 bg-white/90 p-3 shadow-xl backdrop-blur-xl">
+
+                <Card title="Explore">
+                  <div className="space-y-3">
+                    <Select label="Center node" value={centerId} onChange={setCenterId} options={centerOptions} />
+                    <Select label="Hop direction" value={hopDirection} onChange={setHopDirection} options={[
+                      { value: "both", label: "Both (in + out)" }, { value: "in", label: "Upstream (causes)" }, { value: "out", label: "Downstream (effects)" },
+                    ]} />
+                    <Slider label="Max hops" value={hops} min={1} max={5} step={1} onChange={setHops} />
+                    <Select label="Layout" value={layoutMode} onChange={setLayoutMode} options={[
+                      { value: "LR", label: "DAG Left → Right" }, { value: "TB", label: "DAG Top → Bottom" }, { value: "force", label: "⚛ Force (physics)" },
+                    ]} />
+                  </div>
+                </Card>
+
+                {layoutMode === "force" && (
+                  <Card title="⚛ Physics">
+                    <div className="space-y-3">
+                      <Slider label="Charge" value={physics.charge} min={-500} max={-10} step={10} onChange={pSet("charge")} />
+                      <Slider label="Gravity" value={physics.gravity} min={0} max={0.5} step={0.01} onChange={pSet("gravity")} />
+                      <Slider label="Link distance" value={physics.linkDistance} min={50} max={500} step={10} onChange={pSet("linkDistance")} />
+                      <Slider label="Link dist. variation" value={physics.linkDistVar} min={0} max={1} step={0.05} onChange={pSet("linkDistVar")} />
+                      <Toggle label="Collision" checked={physics.collision} onChange={pSet("collision")} />
+                      <Toggle label="Wiggle" checked={physics.wiggle} onChange={pSet("wiggle")} />
+                      <Toggle label="Freeze layout" checked={physics.freeze} onChange={pSet("freeze")} />
+                    </div>
+                  </Card>
+                )}
+
+                <Card title="Nodes">
+                  <div className="space-y-3">
+                    <Toggle label="Type-based fill" checked={nodeVis.useTypeFill} onChange={nSet("useTypeFill")} />
+                    {!nodeVis.useTypeFill && <ColorInput label="Fill" value={nodeVis.fill} onChange={nSet("fill")} />}
+                    {nodeVis.useTypeFill && (
+                      <div className="flex flex-wrap gap-x-2 gap-y-1.5 pt-0.5">
+                        {Object.entries(TYPE_COLORS).map(([type, color]) => (
+                          <span key={type} className="flex items-center gap-1 text-[10px] text-black/50">
+                            <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: color }} />
+                            {type.replace("_", " ")}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <ColorInput label="Stroke" value={nodeVis.stroke} onChange={nSet("stroke")} />
+                    <ColorInput label="Label color" value={nodeVis.labelColor} onChange={nSet("labelColor")} />
+                    <Slider label="Size" value={nodeVis.size} min={0.5} max={2.0} step={0.05} onChange={nSet("size")} />
+                    <Slider label="Stroke width" value={nodeVis.strokeWidth} min={0} max={4} step={0.25} onChange={nSet("strokeWidth")} />
+                    <Toggle label="Display labels" checked={nodeVis.showLabels} onChange={nSet("showLabels")} />
+                    <Toggle label="Size by mentions" checked={nodeVis.sizeByStrength} onChange={nSet("sizeByStrength")} />
+                  </div>
+                </Card>
+
+                <Card title="Links">
+                  <div className="space-y-3">
+                    <Toggle label="Relation coloring" checked={linkVis.useWeightColor} onChange={lSet("useWeightColor")} />
+                    {linkVis.useWeightColor ? (
+                      <div className="flex gap-3 text-[11px] text-black/50">
+                        <span className="flex items-center gap-1"><span className="inline-block w-5 h-0.5 rounded" style={{ background: "#22c55e" }} /> positive</span>
+                        <span className="flex items-center gap-1"><span className="inline-block w-5 h-0.5 rounded" style={{ background: "#ef4444" }} /> negative</span>
+                        <span className="flex items-center gap-1"><span className="inline-block w-5 h-0.5 rounded" style={{ background: "#94a3b8" }} /> neutral</span>
+                      </div>
+                    ) : <ColorInput label="Color" value={linkVis.color} onChange={lSet("color")} />}
+                    <Slider label="Width" value={linkVis.width} min={0.25} max={3} step={0.25} onChange={lSet("width")} />
+                    <Slider label="Alpha" value={linkVis.alpha} min={0} max={1} step={0.05} onChange={lSet("alpha")} />
+                    <Slider label="Width variation" value={linkVis.widthVariation} min={0} max={1} step={0.05} onChange={lSet("widthVariation")} />
+                  </div>
+                </Card>
+
+                <Card title="Thresholding">
+                  <div className="space-y-3">
+                    <Slider label="Min mentions" value={minMentions} min={1} max={10} step={1} onChange={setMinMentions} />
+                    <Toggle label="Show positive edges" checked={showPositive} onChange={setShowPositive} />
+                    <Toggle label="Show negative edges" checked={showNegative} onChange={setShowNegative} />
+                    <Toggle label="Show neutral edges" checked={showNeutral} onChange={setShowNeutral} />
+                    <div className="pt-1">
+                      <div className="mb-1 text-xs text-black/70">Search</div>
+                      <input className="w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm" placeholder="e.g., oil, machado, sanctions" value={query} onChange={(e) => setQuery(e.target.value)} />
+                    </div>
+                  </div>
+                </Card>
               </div>
-            </Card>
-
-            {layoutMode === "force" && (
-              <Card title="⚛ Physics">
-                <div className="space-y-3">
-                  <Slider label="Charge" value={physics.charge} min={-500} max={-10} step={10} onChange={pSet("charge")} />
-                  <Slider label="Gravity" value={physics.gravity} min={0} max={0.5} step={0.01} onChange={pSet("gravity")} />
-                  <Slider label="Link distance" value={physics.linkDistance} min={50} max={500} step={10} onChange={pSet("linkDistance")} />
-                  <Slider label="Link dist. variation" value={physics.linkDistVar} min={0} max={1} step={0.05} onChange={pSet("linkDistVar")} />
-                  <Toggle label="Collision" checked={physics.collision} onChange={pSet("collision")} />
-                  <Toggle label="Wiggle" checked={physics.wiggle} onChange={pSet("wiggle")} />
-                  <Toggle label="Freeze layout" checked={physics.freeze} onChange={pSet("freeze")} />
-                </div>
-              </Card>
             )}
+          </div>
+        </Panel>
 
-            <Card title="Nodes">
-              <div className="space-y-3">
-                <Toggle label="Type-based fill" checked={nodeVis.useTypeFill} onChange={nSet("useTypeFill")} />
-                {!nodeVis.useTypeFill && <ColorInput label="Fill" value={nodeVis.fill} onChange={nSet("fill")} />}
-                {nodeVis.useTypeFill && (
-                  <div className="flex flex-wrap gap-x-2 gap-y-1.5 pt-0.5">
-                    {Object.entries(TYPE_COLORS).map(([type, color]) => (
-                      <span key={type} className="flex items-center gap-1 text-[10px] text-black/50">
-                        <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: color }} />
-                        {type.replace("_", " ")}
+        {/* ── Floating right panel: Selection (only when active) ── */}
+        <Panel position="top-right">
+          <div className="flex flex-col gap-2 items-end">
+            {/* Center badge */}
+            <div className="rounded-2xl border border-black/10 bg-white/90 px-3 py-2 text-xs shadow-lg backdrop-blur-xl">
+              <div className="font-semibold">Center</div>
+              <div className="text-black/70">{nodeMap[centerId]?.label || centerId}</div>
+            </div>
+
+            {/* Selection card */}
+            {(selectedNode || selectedEdge) && (
+              <div className="w-[280px] rounded-2xl border border-black/10 bg-white/90 p-4 shadow-xl backdrop-blur-xl">
+                <div className="mb-3 text-sm font-semibold">Selection</div>
+                {selectedNode && (
+                  <div className="space-y-2 text-sm text-black/80">
+                    <div className="text-sm font-semibold">{selectedNode.label}</div>
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-full px-2 py-0.5 text-[10px] font-medium" style={{ background: (TYPE_COLORS[selectedNode.type] || "#666") + "20", color: TYPE_COLORS[selectedNode.type] || "#666" }}>
+                        {selectedNode.type.replace("_", " ")}
                       </span>
-                    ))}
+                      <span className="text-xs text-black/50">mentions: {selectedNode.mentions}</span>
+                    </div>
+                    <div className="rounded-xl border border-black/10 bg-neutral-50/80 p-3 text-xs text-black/70 leading-relaxed">{selectedNode.description}</div>
+                    <div className="flex gap-2">
+                      <button className="rounded-xl border border-black/10 bg-white px-3 py-2 text-xs shadow-sm hover:bg-neutral-50 transition-colors" onClick={() => setCenterId(selectedNode.id)}>Focus here</button>
+                      <button className="rounded-xl border border-black/10 bg-white px-3 py-2 text-xs shadow-sm hover:bg-neutral-50 transition-colors" onClick={() => setQuery(selectedNode.label)}>Search this</button>
+                    </div>
                   </div>
                 )}
-                <ColorInput label="Stroke" value={nodeVis.stroke} onChange={nSet("stroke")} />
-                <ColorInput label="Label color" value={nodeVis.labelColor} onChange={nSet("labelColor")} />
-                <Slider label="Size" value={nodeVis.size} min={0.5} max={2.0} step={0.05} onChange={nSet("size")} />
-                <Slider label="Stroke width" value={nodeVis.strokeWidth} min={0} max={4} step={0.25} onChange={nSet("strokeWidth")} />
-                <Toggle label="Display labels" checked={nodeVis.showLabels} onChange={nSet("showLabels")} />
-                <Toggle label="Size by mentions" checked={nodeVis.sizeByStrength} onChange={nSet("sizeByStrength")} />
-              </div>
-            </Card>
-
-            <Card title="Links">
-              <div className="space-y-3">
-                <Toggle label="Relation coloring" checked={linkVis.useWeightColor} onChange={lSet("useWeightColor")} />
-                {linkVis.useWeightColor ? (
-                  <div className="flex gap-3 text-[11px] text-black/50">
-                    <span className="flex items-center gap-1"><span className="inline-block w-5 h-0.5 rounded" style={{ background: "#22c55e" }} /> positive</span>
-                    <span className="flex items-center gap-1"><span className="inline-block w-5 h-0.5 rounded" style={{ background: "#ef4444" }} /> negative</span>
-                    <span className="flex items-center gap-1"><span className="inline-block w-5 h-0.5 rounded" style={{ background: "#94a3b8" }} /> neutral</span>
-                  </div>
-                ) : <ColorInput label="Color" value={linkVis.color} onChange={lSet("color")} />}
-                <Slider label="Width" value={linkVis.width} min={0.25} max={3} step={0.25} onChange={lSet("width")} />
-                <Slider label="Alpha" value={linkVis.alpha} min={0} max={1} step={0.05} onChange={lSet("alpha")} />
-                <Slider label="Width variation" value={linkVis.widthVariation} min={0} max={1} step={0.05} onChange={lSet("widthVariation")} />
-              </div>
-            </Card>
-
-            <Card title="Thresholding">
-              <div className="space-y-3">
-                <Slider label="Min mentions" value={minMentions} min={1} max={10} step={1} onChange={setMinMentions} />
-                <Toggle label="Show positive edges" checked={showPositive} onChange={setShowPositive} />
-                <Toggle label="Show negative edges" checked={showNegative} onChange={setShowNegative} />
-                <Toggle label="Show neutral edges" checked={showNeutral} onChange={setShowNeutral} />
-                <div className="pt-1">
-                  <div className="mb-1 text-xs text-black/70">Search</div>
-                  <input className="w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm" placeholder="e.g., oil, machado, sanctions" value={query} onChange={(e) => setQuery(e.target.value)} />
-                </div>
-              </div>
-            </Card>
-
-            <Card title="Selection">
-              {!selectedNode && !selectedEdge && <div className="text-xs text-black/60">Click a node or edge in the graph.</div>}
-              {selectedNode && (
-                <div className="space-y-2">
-                  <div className="text-sm font-semibold">{selectedNode.label}</div>
-                  <div className="flex items-center gap-2">
-                    <span className="rounded-full px-2 py-0.5 text-[10px] font-medium" style={{ background: (TYPE_COLORS[selectedNode.type] || "#666") + "20", color: TYPE_COLORS[selectedNode.type] || "#666" }}>
-                      {selectedNode.type.replace("_", " ")}
+                {selectedEdge && (
+                  <div className="space-y-2 text-sm text-black/80">
+                    <div className="text-sm font-semibold">{nodeMap[selectedEdge.source]?.label || selectedEdge.source} → {nodeMap[selectedEdge.target]?.label || selectedEdge.target}</div>
+                    <span className="rounded-full px-2 py-0.5 text-[10px] font-medium" style={{ background: (REL_COLORS[selectedEdge.relation] || "#666") + "20", color: REL_COLORS[selectedEdge.relation] || "#666" }}>
+                      {selectedEdge.relation}
                     </span>
-                    <span className="text-xs text-black/50">mentions: {selectedNode.mentions}</span>
+                    <div className="rounded-xl border border-black/10 bg-neutral-50/80 p-3 text-xs text-black/70 leading-relaxed">{selectedEdge.description}</div>
                   </div>
-                  <div className="rounded-xl border border-black/10 bg-neutral-50 p-3 text-xs text-black/70 leading-relaxed">{selectedNode.description}</div>
-                  <div className="flex gap-2">
-                    <button className="rounded-xl border border-black/10 bg-white px-3 py-2 text-xs shadow-sm" onClick={() => setCenterId(selectedNode.id)}>Focus here</button>
-                    <button className="rounded-xl border border-black/10 bg-white px-3 py-2 text-xs shadow-sm" onClick={() => setQuery(selectedNode.label)}>Search this</button>
-                  </div>
-                </div>
-              )}
-              {selectedEdge && (
-                <div className="space-y-2">
-                  <div className="text-sm font-semibold">{nodeMap[selectedEdge.source]?.label || selectedEdge.source} → {nodeMap[selectedEdge.target]?.label || selectedEdge.target}</div>
-                  <span className="rounded-full px-2 py-0.5 text-[10px] font-medium" style={{ background: (REL_COLORS[selectedEdge.relation] || "#666") + "20", color: REL_COLORS[selectedEdge.relation] || "#666" }}>
-                    {selectedEdge.relation}
-                  </span>
-                  <div className="rounded-xl border border-black/10 bg-neutral-50 p-3 text-xs text-black/70 leading-relaxed">{selectedEdge.description}</div>
-                </div>
-              )}
-            </Card>
-
-            <Card title="Quick tips">
-              <ul className="list-disc space-y-1 pl-5 text-xs text-black/70">
-                <li>Click a node to <b>re-center</b> the subgraph.</li>
-                <li>Use <b>Min mentions</b> to filter low-frequency entities.</li>
-                <li>Switch to <b>⚛ Force</b> layout to see natural clustering.</li>
-                <li>Toggle <b>positive/negative/neutral</b> edges to focus on specific relationships.</li>
-              </ul>
-            </Card>
+                )}
+              </div>
+            )}
           </div>
-
-          <div className="min-h-0 flex-1 overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
-            <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} onEdgesChange={onEdgesChange} onNodeClick={onNodeClick} onEdgeClick={onEdgeClick} fitView fitViewOptions={{ padding: 0.2 }} proOptions={{ hideAttribution: true }}>
-              <Background />
-              <Controls />
-              <MiniMap pannable zoomable />
-              <Panel position="top-right">
-                <div className="rounded-2xl border border-black/10 bg-white/90 px-3 py-2 text-xs shadow-sm backdrop-blur">
-                  <div className="font-semibold">Center</div>
-                  <div className="text-black/70">{nodeMap[centerId]?.label || centerId}</div>
-                </div>
-              </Panel>
-            </ReactFlow>
-          </div>
-        </div>
-      </div>
+        </Panel>
+      </ReactFlow>
     </div>
   );
 }
