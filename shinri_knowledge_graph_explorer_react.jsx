@@ -2,7 +2,6 @@ import React, { useMemo, useState, useEffect, useCallback, useRef } from "react"
 import ReactFlow, {
   Background,
   Controls,
-  MiniMap,
   Panel,
   useNodesState,
   useEdgesState,
@@ -17,9 +16,10 @@ import {
 } from "d3-force";
 
 /**
- * Shinri — Venezuela / Maduro Knowledge Graph
+ * Shinri — Venezuela / Maduro Knowledge Graph (Expanded)
  * Refined from Reuters, AP, NYT, WSJ, FT, BBC, Bloomberg, The Economist,
- * Foreign Policy, CFR, ICG, Atlantic Council, ACLED (2024-2026 coverage).
+ * Foreign Policy, CFR, ICG, Atlantic Council, ACLED, Al Jazeera, CNBC, RAND,
+ * CSIS, Lancet, UNICEF, WFP, IOM, Oxford Law, IMF, World Bank (2024-2026).
  *
  * Entity types: person | country | organization | event | macro_index |
  *               policy | activity | institution | feature
@@ -116,6 +116,75 @@ const NODES = [
   { id: "opposition_cohesion", label: "Opposition Cohesion", type: "feature", mentions: 5, description: "Unified around Machado-González ticket in 2024. Post-capture competition between opposition and Rodríguez for power." },
   { id: "regime_stability", label: "Regime Stability", type: "feature", mentions: 7, description: "Composite of military loyalty, institutional control, and popular support. Collapsed after US operation despite decade of coup-proofing." },
   { id: "coup_proofing", label: "Coup-Proofing", type: "feature", mentions: 5, description: "Overlapping security structures, criminal rents binding officers, Cuban intelligence monitoring, and colectivo parallel force." },
+
+  // ══════════════════════════════════════
+  // EXPANSION — Upstream & Downstream
+  // ══════════════════════════════════════
+
+  // ── People (new) ──
+  { id: "chris_wright", label: "Chris Wright", type: "person", mentions: 3, description: "US Energy Secretary. Visited Venezuela post-capture. Leading oil sector reconstruction strategy and sanctions easing." },
+  { id: "scott_bessent", label: "Scott Bessent", type: "person", mentions: 3, description: "US Treasury Secretary. Engaged IMF and World Bank leadership on Venezuela economic reconstruction framework." },
+  { id: "jose_antonio_kast", label: "José Antonio Kast", type: "person", mentions: 2, description: "Chile's president-elect (2025). Made mass deportation of undocumented Venezuelan migrants a central policy platform." },
+  { id: "nino_guerrero", label: "Niño Guerrero", type: "person", mentions: 3, description: "Héctor Guerrero Flores. Leader of Tren de Aragua from Tocorón prison. $4M US bounty. Orchestrated gang's transnational expansion." },
+
+  // ── Countries (new) ──
+  { id: "chile", label: "Chile", type: "country", mentions: 4, description: "Hosts Venezuelan migrants. TdA's 'Pirates of Aragua' operate in Santiago and Tarapacá. Lt. Ojeda assassinated there Feb 2024." },
+  { id: "peru", label: "Peru", type: "country", mentions: 3, description: "Hosts 1.5M+ Venezuelan migrants. TdA has permanent cells. Tightening immigration enforcement." },
+  { id: "ecuador", label: "Ecuador", type: "country", mentions: 2, description: "Terminated 15-year bilateral visa agreement with Venezuela in Sept 2025. Shifting to stricter migration controls." },
+  { id: "spain", label: "Spain", type: "country", mentions: 2, description: "Edmundo González in exile in Madrid. Operation Interciti dismantled TdA cell (Nov 2025). 13 arrested for synthetic drug trafficking." },
+  { id: "switzerland", label: "Switzerland", type: "country", mentions: 2, description: "Froze assets of Maduro and 35 associates in Jan 2026. Key financial enforcement jurisdiction." },
+
+  // ── Organizations (new) ──
+  { id: "exxonmobil", label: "ExxonMobil", type: "organization", mentions: 4, description: "Owed $984.5M from 2007 nationalization. CEO Darren Woods called Venezuela 'uninvestable' without democratic transition. Angered Trump." },
+  { id: "conocophillips", label: "ConocoPhillips", type: "organization", mentions: 4, description: "Outstanding arbitration claims approaching $10B from 2007 nationalization. Monitoring developments. Not yet committed to return." },
+  { id: "repsol", label: "Repsol", type: "organization", mentions: 3, description: "Spanish energy firm. Holds stakes in Petroquiriquire and Cardón IV. Applied for US export licenses. Operating in Venezuela." },
+  { id: "eni", label: "ENI", type: "organization", mentions: 2, description: "Italian energy firm. JV with Repsol on Cardón IV West. Operations proceeding. Applied for US authorization." },
+  { id: "ccrc", label: "China Concord Resources", type: "organization", mentions: 2, description: "Chinese state-linked firm. $1B investment in two Venezuelan oil fields. 20-year shared production agreement (May 2024). Target: 60K bpd by end 2026." },
+  { id: "sinaloa_cartel", label: "Sinaloa Cartel", type: "organization", mentions: 2, description: "Mexican drug cartel. Strategic alliance with Tren de Aragua for logistics and distribution in US and Mexican markets." },
+  { id: "red_command", label: "Red Command (CV)", type: "organization", mentions: 2, description: "Brazil's largest criminal gang. Alliance with TdA for cross-border operations and drug trafficking." },
+
+  // ── Institutions (new) ──
+  { id: "imf", label: "IMF", type: "institution", mentions: 5, description: "International Monetary Fund. Board met Jan 2026 to discuss Venezuela. Key anchor for debt restructuring. No Article IV consultation in 217+ months." },
+  { id: "world_bank", label: "World Bank", type: "institution", mentions: 3, description: "Board met Jan 2026 on Venezuela. No active loan portfolio. Partner for reconstruction financing alongside IDB." },
+  { id: "idb", label: "IDB", type: "institution", mentions: 4, description: "Inter-American Development Bank. Venezuela owes ~$2B. Expected to house reconstruction plan, catalyze private capital, and provide public financing." },
+  { id: "wfp", label: "WFP", type: "institution", mentions: 3, description: "World Food Programme. Cut assistance by half in 2025 due to funding shortfall. Rates Venezuela food situation as crisis-level." },
+  { id: "unicef", label: "UNICEF", type: "institution", mentions: 3, description: "2025 appeal of $183M remains 84% unfunded ($152.9M gap). Social Protection 97% underfunded. Education/WASH 88% underfunded." },
+  { id: "guri_dam", label: "Guri Dam (Simón Bolívar)", type: "institution", mentions: 4, description: "10,000 MW hydroelectric plant producing ~80% of Venezuela's electricity. Output down 40% since 2020. Threatened by drought and mining deforestation." },
+
+  // ── Events (new) ──
+  { id: "swiss_asset_freeze", label: "Swiss Asset Freeze", type: "event", mentions: 2, description: "Jan 2026 Switzerland froze assets of Maduro and 35 close associates. Signal for broader international asset recovery." },
+  { id: "hydrocarbons_reform", label: "Hydrocarbons Sector Reform", type: "event", mentions: 4, description: "Jan 29 2026 Rodríguez announced broad reform allowing private companies in oil sector. Key to attracting foreign investment." },
+  { id: "operation_interciti", label: "Operation Interciti (Spain)", type: "event", mentions: 2, description: "Nov 2025 Spanish police dismantled TdA cell. 13 arrested. Confirmed gang expansion beyond Western Hemisphere into Europe." },
+  { id: "tda_alien_enemies_act", label: "Alien Enemies Act Invocation", type: "event", mentions: 3, description: "Mar 2025 White House invoked 1798 Alien Enemies Act claiming TdA 'invaded' the US. 200 detainees deported to El Salvador despite court order." },
+  { id: "caracas_blackout_2025", label: "Caracas Blackout (Mar 2025)", type: "event", mentions: 3, description: "Major blackout halted Caracas subway for 48 hours. 2M+ commuters affected. Led to 1x1 public sector work schedule." },
+  { id: "wfp_funding_cut", label: "WFP Funding Cut", type: "event", mentions: 2, description: "Aug 2025 WFP announced 50% reduction in Venezuela assistance due to lack of donor funding. Second-least funded HRP globally at 17%." },
+  { id: "imf_wb_meetings", label: "IMF/World Bank Venezuela Meetings", type: "event", mentions: 3, description: "Jan 2026 both boards met to discuss Venezuela reconstruction. First formal engagement in years. Precursor to potential program." },
+
+  // ── Macro Indices (new) ──
+  { id: "sovereign_debt", label: "Sovereign Debt", type: "macro_index", mentions: 6, description: "$150B+ total external liabilities. Debt-to-GDP ~200%. Bonds in default since 2017. Restructuring requires IMF anchor and creditor coordination." },
+  { id: "water_access", label: "Water Access", type: "macro_index", mentions: 4, description: "62% of population faces restricted drinking water access. Linked to electricity blackouts disrupting pumping infrastructure." },
+  { id: "diaspora_remittances", label: "Diaspora Remittances", type: "macro_index", mentions: 4, description: "Critical household lifeline. Diaspora contributes $10.6B+ annually to Latin American economies. Strict forex controls limit formal channels." },
+  { id: "deforestation_rate", label: "Deforestation Rate", type: "macro_index", mentions: 3, description: "2,821 km² of forest destroyed since Arco Minero creation (2016). 74% in Amazonas and Bolívar. 50% in protected territories." },
+  { id: "mercury_contamination", label: "Mercury Contamination", type: "macro_index", mentions: 3, description: "Up to 90% of Indigenous women in Arco Minero have dangerous mercury levels. Contaminated rivers supply drinking water for Colombia and Brazil." },
+  { id: "electricity_capacity", label: "Electricity Capacity", type: "macro_index", mentions: 4, description: "Grid transmission losses ~30%. Infrastructure up to 70 years old. $20B estimated to modernize. Hydroelectric output down 40% since 2020." },
+  { id: "oil_investment_needed", label: "Oil Investment Gap", type: "macro_index", mentions: 5, description: "$53B needed over 15 years to maintain 1.1M bpd. $183B to restore 3M bpd by 2040. Post-Maduro reform expected to attract cautious FDI." },
+
+  // ── Policies (new) ──
+  { id: "arco_minero", label: "Arco Minero (Mining Arc)", type: "policy", mentions: 4, description: "2016 decree designating 12% of Venezuelan territory as special mining zone. Size of Portugal. Covers Amazonas, Bolívar, Delta Amacuro." },
+  { id: "clap_distribution", label: "CLAP Food Distribution", type: "policy", mentions: 4, description: "Government food box program. Used as political loyalty tool — distribution conditional on Chavista support. Covers basic goods." },
+  { id: "secondary_sanctions_crypto", label: "Crypto Sanctions Evasion", type: "policy", mentions: 3, description: "PDVSA receiving oil payments in USDT stablecoin since 2024. Parallel payment channel outside banking. Part of 'Axis of Evasion' tactics." },
+  { id: "us_oil_marketing_deal", label: "US-Venezuela Oil Deal", type: "policy", mentions: 3, description: "Post-capture deal: US markets and sells Venezuelan oil, deposits proceeds in US-controlled accounts for benefit of both peoples. ~$3B in sanctioned oil." },
+
+  // ── Activities (new) ──
+  { id: "dark_fleet_shipping", label: "Dark Fleet Shipping", type: "activity", mentions: 5, description: "1,400+ tankers using deceptive practices. 40% of Venezuela's dark fleet sanctioned. At-sea transfers, tracker shutdowns, rebranding as Malaysian crude." },
+  { id: "tda_human_trafficking", label: "TdA Human Trafficking", type: "activity", mentions: 3, description: "Tren de Aragua trafficking women from Bolivia to Santiago. Extortion of migrant routes. Sexual exploitation rings in Chile and Peru." },
+  { id: "debt_restructuring_process", label: "Debt Restructuring", type: "activity", mentions: 5, description: "Negotiation to resolve $150B+ in external liabilities. Complicated by China's collateralized oil debt and Russia's geopolitical stakes." },
+  { id: "return_migration", label: "Return Migration", type: "activity", mentions: 3, description: "Post-Maduro cautious diaspora return. Net migration briefly positive. Host countries tightening policies. Diaspora skeptical of Rodríguez." },
+
+  // ── Features (new) ──
+  { id: "brain_drain", label: "Brain Drain", type: "feature", mentions: 5, description: "Massive human capital flight. Doctors, engineers, oil workers emigrated. Critical workforce gaps in health, energy, and education sectors." },
+  { id: "infrastructure_decay", label: "Infrastructure Decay", type: "feature", mentions: 5, description: "Decades of underinvestment. Roads, hospitals, power grid, refineries in collapse. Amuay refinery shut down from blackout. $20B+ to restore grid alone." },
+  { id: "sanctions_evasion_network", label: "Sanctions Evasion Network", type: "feature", mentions: 4, description: "Integrated system of dark fleet tankers, crypto payments, shell companies, and allied state cooperation (China, Russia, Iran, North Korea)." },
 ];
 
 // ----------------------------
@@ -235,6 +304,101 @@ const EDGES = [
   { source: "catatumbo_offensive", target: "colombia", relation: "negative", description: "78 killed, 50K+ displaced by ELN assault" },
   { source: "eln", target: "colombia", relation: "negative", description: "ELN controls border territory, destabilises Colombia" },
   { source: "opec", target: "brent_crude_price", relation: "positive", description: "OPEC production cuts support crude prices" },
+
+  // ══════════════════════════════════════
+  // EXPANSION EDGES — Upstream & Downstream
+  // ══════════════════════════════════════
+
+  // ── Sanctions evasion infrastructure ──
+  { source: "dark_fleet_shipping", target: "oil_export_revenue", relation: "positive", description: "Shadow tankers circumvent sanctions, maintaining revenue flow to Caracas" },
+  { source: "us_sanctions", target: "dark_fleet_shipping", relation: "positive", description: "Tighter sanctions drive more oil through deceptive dark fleet channels" },
+  { source: "dark_fleet_shipping", target: "china", relation: "positive", description: "Dark fleet delivers rebranded Venezuelan crude to Chinese refineries" },
+  { source: "secondary_sanctions_crypto", target: "oil_export_revenue", relation: "positive", description: "USDT payments bypass banking sanctions, enabling oil revenue collection" },
+  { source: "sanctions_evasion_network", target: "dark_fleet_shipping", relation: "positive", description: "Integrated network coordinates tankers, shell companies, and crypto payments" },
+  { source: "sanctions_evasion_network", target: "secondary_sanctions_crypto", relation: "positive", description: "Crypto channels are part of broader evasion infrastructure" },
+  { source: "iran", target: "sanctions_evasion_network", relation: "positive", description: "Iran shares sanctions evasion tactics as part of 'Axis of Evasion'" },
+
+  // ── Electricity & infrastructure ──
+  { source: "guri_dam", target: "electricity_capacity", relation: "positive", description: "Guri produces ~80% of national electricity — single point of failure" },
+  { source: "electricity_capacity", target: "oil_production", relation: "positive", description: "Refineries and oil infrastructure depend on reliable power supply" },
+  { source: "electricity_capacity", target: "water_access", relation: "positive", description: "Water pumping relies on electricity grid — blackouts cut water supply" },
+  { source: "infrastructure_decay", target: "electricity_capacity", relation: "negative", description: "70-year-old transmission lines lose ~30% of generated power" },
+  { source: "infrastructure_decay", target: "oil_production", relation: "negative", description: "Decayed refineries and pipelines limit production capacity" },
+  { source: "caracas_blackout_2025", target: "electricity_capacity", relation: "negative", description: "48-hour subway shutdown exposed grid fragility to 2M+ commuters" },
+  { source: "operation_absolute_resolve", target: "electricity_capacity", relation: "negative", description: "US strikes damaged transmission infrastructure near Caracas" },
+  { source: "water_access", target: "food_security", relation: "positive", description: "Water restrictions compound food insecurity and malnutrition" },
+
+  // ── Mining & environment ──
+  { source: "arco_minero", target: "illegal_gold_mining", relation: "positive", description: "Mining Arc decree opened 12% of territory to extraction, enabling industrial-scale illegal mining" },
+  { source: "illegal_gold_mining", target: "deforestation_rate", relation: "positive", description: "2,821 km² of forest destroyed since 2016. 74% in Amazonas and Bolívar" },
+  { source: "illegal_gold_mining", target: "mercury_contamination", relation: "positive", description: "Mercury used in gold extraction contaminates rivers and indigenous communities" },
+  { source: "deforestation_rate", target: "guri_dam", relation: "negative", description: "Mining deforestation causes local droughts and excess sediment, threatening hydroelectric output" },
+  { source: "mercury_contamination", target: "food_security", relation: "negative", description: "Mercury in waterways contaminates fish — primary protein source for indigenous communities" },
+  { source: "eln", target: "illegal_gold_mining", relation: "positive", description: "ELN earns ~60% of revenue from mining operations in Venezuela and Colombia" },
+  { source: "fanb", target: "illegal_gold_mining", relation: "positive", description: "Military officers charge criminal groups for mining access and fuel inputs" },
+
+  // ── TdA transnational expansion ──
+  { source: "tren_de_aragua", target: "chile", relation: "negative", description: "Pirates of Aragua operate in Santiago and Tarapacá. Lt. Ojeda assassinated Feb 2024." },
+  { source: "tren_de_aragua", target: "peru", relation: "negative", description: "Permanent TdA cells established. Extortion, trafficking, and smuggling operations" },
+  { source: "tren_de_aragua", target: "tda_human_trafficking", relation: "positive", description: "TdA traffics women and extorts migrant routes across South America" },
+  { source: "nino_guerrero", target: "tren_de_aragua", relation: "positive", description: "Founded and leads TdA from Tocorón prison. Orchestrated transnational expansion." },
+  { source: "tren_de_aragua", target: "sinaloa_cartel", relation: "positive", description: "Strategic alliance for logistics and distribution in US/Mexico" },
+  { source: "tren_de_aragua", target: "red_command", relation: "positive", description: "Alliance with Brazil's CV for cross-border drug operations" },
+  { source: "operation_interciti", target: "tren_de_aragua", relation: "negative", description: "Spanish police dismantled European cell. Confirmed expansion beyond Western Hemisphere." },
+  { source: "tda_alien_enemies_act", target: "tren_de_aragua", relation: "negative", description: "1798 Act invoked to deport alleged TdA members. 200 sent to El Salvador." },
+  { source: "jose_antonio_kast", target: "mass_migration", relation: "negative", description: "Kast's deportation policies target Venezuelan migrants in Chile" },
+  { source: "mass_migration", target: "chile", relation: "negative", description: "Venezuelan migrants strain Chilean services. Anti-migrant political backlash." },
+  { source: "mass_migration", target: "peru", relation: "negative", description: "1.5M+ Venezuelan refugees in Peru. Immigration enforcement tightening." },
+  { source: "mass_migration", target: "ecuador", relation: "negative", description: "Ecuador terminated bilateral visa agreement Sept 2025. Stricter controls." },
+
+  // ── Humanitarian downstream ──
+  { source: "clap_distribution", target: "food_security", relation: "positive", description: "CLAP boxes provide basic food to loyalist households" },
+  { source: "clap_distribution", target: "regime_stability", relation: "positive", description: "Food distribution conditioned on political loyalty — social control tool" },
+  { source: "wfp_funding_cut", target: "food_security", relation: "negative", description: "WFP halved Venezuela assistance. Second-least funded humanitarian plan globally." },
+  { source: "wfp", target: "food_security", relation: "positive", description: "WFP rates Venezuela as crisis-level. Provides nutrition and food assistance." },
+  { source: "unicef", target: "food_security", relation: "positive", description: "UNICEF nutrition programme treats acute malnutrition. 84% underfunded." },
+  { source: "brain_drain", target: "oil_production", relation: "negative", description: "Emigration of engineers and oil workers hollowed out PDVSA's technical capacity" },
+  { source: "brain_drain", target: "electricity_capacity", relation: "negative", description: "Loss of skilled technicians degraded grid maintenance and repair capability" },
+  { source: "poverty_rate", target: "brain_drain", relation: "positive", description: "Economic collapse drove professionals and middle class to emigrate" },
+  { source: "mass_migration", target: "brain_drain", relation: "positive", description: "8M+ exodus includes disproportionate share of educated workers" },
+  { source: "mass_migration", target: "diaspora_remittances", relation: "positive", description: "Diaspora sends money home — now a critical economic lifeline for households" },
+  { source: "diaspora_remittances", target: "poverty_rate", relation: "negative", description: "Households receiving remittances have significantly lower poverty levels" },
+
+  // ── Oil sector reconstruction ──
+  { source: "hydrocarbons_reform", target: "oil_production", relation: "positive", description: "Jan 2026 reform allows private companies in oil sector for first time" },
+  { source: "hydrocarbons_reform", target: "oil_investment_needed", relation: "negative", description: "Reform addresses legal barriers but $53-183B investment gap remains" },
+  { source: "delcy_rodriguez", target: "hydrocarbons_reform", relation: "positive", description: "Rodríguez announced broad hydrocarbons reform to attract foreign investment" },
+  { source: "chris_wright", target: "oil_production", relation: "positive", description: "Energy Secretary leading US strategy for Venezuelan oil recovery" },
+  { source: "exxonmobil", target: "oil_investment_needed", relation: "neutral", description: "CEO called Venezuela 'uninvestable'. $984.5M owed. Won't return without democracy." },
+  { source: "conocophillips", target: "oil_investment_needed", relation: "neutral", description: "~$10B in claims. Monitoring developments. Not yet committed to re-enter." },
+  { source: "repsol", target: "oil_production", relation: "positive", description: "Operating in Venezuela. Applied for US export licenses. JV with ENI." },
+  { source: "eni", target: "oil_production", relation: "positive", description: "Cardón IV West operations continuing. Applied for US authorization." },
+  { source: "ccrc", target: "oil_production", relation: "positive", description: "China Concord Resources invested $1B. Targeting 60K bpd by end 2026." },
+  { source: "chevron", target: "oil_investment_needed", relation: "positive", description: "Best positioned US major. Existing JVs provide technical expertise platform." },
+  { source: "donald_trump", target: "us_oil_marketing_deal", relation: "positive", description: "Trump ordered US to market Venezuelan oil. ~$3B in sanctioned oil secured." },
+  { source: "us_oil_marketing_deal", target: "oil_export_revenue", relation: "positive", description: "US-controlled oil sales channel revenue to reconstruction" },
+
+  // ── Debt & reconstruction ──
+  { source: "sovereign_debt", target: "oil_investment_needed", relation: "negative", description: "Debt-to-GDP ~200% deters foreign investment. No clear repayment path." },
+  { source: "imf", target: "debt_restructuring_process", relation: "positive", description: "IMF program anchors restructuring — provides creditor coordination framework" },
+  { source: "idb", target: "debt_restructuring_process", relation: "positive", description: "IDB expected to house reconstruction plan and catalyze private capital" },
+  { source: "world_bank", target: "debt_restructuring_process", relation: "positive", description: "Reconstruction financing partner. No active portfolio since Venezuela paid off debts in 2007." },
+  { source: "scott_bessent", target: "imf_wb_meetings", relation: "positive", description: "Treasury Secretary engaged IMF/WB leadership on reconstruction" },
+  { source: "imf_wb_meetings", target: "debt_restructuring_process", relation: "positive", description: "Jan 2026 board meetings signal formal re-engagement after 217+ months" },
+  { source: "china", target: "debt_restructuring_process", relation: "negative", description: "China's $10-12B collateralized oil debt gives leverage to delay restructuring" },
+  { source: "russia", target: "debt_restructuring_process", relation: "negative", description: "Russia may use $17B in outstanding loans as geopolitical bargaining chip" },
+  { source: "debt_restructuring_process", target: "sovereign_debt", relation: "negative", description: "Successful restructuring would reduce debt burden and unlock investment" },
+  { source: "debt_restructuring_process", target: "gdp_growth", relation: "positive", description: "Restructuring unlocks IMF financing, stabilizes economy, attracts FDI" },
+
+  // ── Return migration & diaspora ──
+  { source: "operation_absolute_resolve", target: "return_migration", relation: "positive", description: "Maduro removal created cautious optimism among diaspora about returning" },
+  { source: "return_migration", target: "brain_drain", relation: "negative", description: "Returning professionals could partially reverse human capital losses" },
+  { source: "rodriguez_sworn_in", target: "return_migration", relation: "neutral", description: "Diaspora skeptical of Rodríguez — most waiting for clearer democratic transition" },
+  { source: "spain", target: "edmundo_gonzalez", relation: "positive", description: "González in exile in Madrid. Spain provides diplomatic platform." },
+
+  // ── Switzerland & international enforcement ──
+  { source: "swiss_asset_freeze", target: "nicolas_maduro", relation: "negative", description: "Maduro and 35 associates' assets frozen — limits financial escape routes" },
+  { source: "swiss_asset_freeze", target: "sovereign_debt", relation: "positive", description: "Recovered assets could contribute to debt resolution" },
 ];
 
 // ----------------------------
@@ -253,15 +417,15 @@ const TYPE_COLORS = {
 };
 
 const TYPE_BG = {
-  person: "#fce7f3",
-  country: "#d1fae5",
-  organization: "#dbeafe",
-  event: "#fef3c7",
-  macro_index: "#ede9fe",
-  policy: "#ffedd5",
-  activity: "#fee2e2",
-  institution: "#e0f2fe",
-  feature: "#f1f5f9",
+  person: "#3b1a2e",
+  country: "#1a2e24",
+  organization: "#1a2440",
+  event: "#2e2810",
+  macro_index: "#251e3a",
+  policy: "#2e2010",
+  activity: "#2e1a1a",
+  institution: "#1a2a3a",
+  feature: "#1e2228",
 };
 
 const REL_COLORS = { positive: "#22c55e", negative: "#ef4444", neutral: "#94a3b8" };
@@ -430,7 +594,7 @@ function makeRfNodes(nodes, nodeVis) {
       style: {
         borderRadius: 14, padding: 8,
         border: `${nodeVis.strokeWidth}px solid ${nodeVis.useTypeFill ? accent + "50" : nodeVis.stroke}`,
-        boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
+        boxShadow: "0 4px 16px rgba(0,0,0,0.4)",
         background: bg, width: Math.round(200 * scale),
         fontFamily: "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial",
       },
@@ -460,9 +624,9 @@ function makeRfEdges(edges, linkVis) {
 // ----------------------------
 function Card({ title, children }) {
   return (
-    <div className="rounded-2xl border border-black/10 bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
-      <div className="mb-3 text-sm font-semibold">{title}</div>
-      <div className="text-sm text-black/80">{children}</div>
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+      <div className="mb-3 text-sm font-semibold text-white/90">{title}</div>
+      <div className="text-sm text-white/70">{children}</div>
     </div>
   );
 }
@@ -470,29 +634,29 @@ function Card({ title, children }) {
 function Slider({ label, value, min, max, step, onChange }) {
   return (
     <div className="space-y-1">
-      <div className="flex items-center justify-between text-xs text-black/70">
+      <div className="flex items-center justify-between text-xs text-white/60">
         <span>{label}</span><span className="tabular-nums font-mono">{value}</span>
       </div>
-      <input className="w-full" type="range" min={min} max={max} step={step} value={value} onChange={(e) => onChange(Number(e.target.value))} />
+      <input className="w-full accent-blue-500" type="range" min={min} max={max} step={step} value={value} onChange={(e) => onChange(Number(e.target.value))} />
     </div>
   );
 }
 
 function Toggle({ label, checked, onChange }) {
   return (
-    <label className="flex cursor-pointer items-center justify-between gap-3 text-xs text-black/80">
+    <label className="flex cursor-pointer items-center justify-between gap-3 text-xs text-white/70">
       <span>{label}</span>
-      <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} />
+      <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} className="accent-blue-500" />
     </label>
   );
 }
 
 function Select({ label, value, onChange, options }) {
   return (
-    <label className="block text-xs text-black/80">
+    <label className="block text-xs text-white/70">
       <div className="mb-1">{label}</div>
-      <select className="w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm" value={value} onChange={(e) => onChange(e.target.value)}>
-        {options.map((opt) => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+      <select className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/90" value={value} onChange={(e) => onChange(e.target.value)}>
+        {options.map((opt) => <option key={opt.value} value={opt.value} className="bg-neutral-800 text-white">{opt.label}</option>)}
       </select>
     </label>
   );
@@ -500,12 +664,12 @@ function Select({ label, value, onChange, options }) {
 
 function ColorInput({ label, value, onChange }) {
   return (
-    <label className="flex items-center justify-between text-xs text-black/80 gap-2">
+    <label className="flex items-center justify-between text-xs text-white/70 gap-2">
       <span>{label}</span>
       <div className="flex items-center gap-1.5">
-        <span className="font-mono text-[10px] text-black/40">{value}</span>
+        <span className="font-mono text-[10px] text-white/40">{value}</span>
         <input type="color" value={value} onChange={(e) => onChange(e.target.value)}
-          style={{ width: 28, height: 22, padding: 0, border: "1px solid rgba(0,0,0,0.2)", borderRadius: 4, cursor: "pointer" }} />
+          style={{ width: 28, height: 22, padding: 0, border: "1px solid rgba(255,255,255,0.2)", borderRadius: 4, cursor: "pointer" }} />
       </div>
     </label>
   );
@@ -529,8 +693,8 @@ export default function App() {
   const [panelOpen, setPanelOpen] = useState(true);
 
   const [physics, setPhysics] = useState({ charge: -200, gravity: 0.08, linkDistance: 250, linkDistVar: 0.3, collision: true, wiggle: false, freeze: false });
-  const [nodeVis, setNodeVis] = useState({ size: 1.0, fill: "#ffffff", stroke: "#cccccc", strokeWidth: 1, labelColor: "#1a1a1a", showLabels: true, sizeByStrength: true, useTypeFill: true });
-  const [linkVis, setLinkVis] = useState({ color: "#94a3b8", width: 1.0, alpha: 0.55, widthVariation: 0.6, useWeightColor: true });
+  const [nodeVis, setNodeVis] = useState({ size: 1.0, fill: "#1e1e2e", stroke: "#444444", strokeWidth: 1, labelColor: "#e2e2e2", showLabels: true, sizeByStrength: true, useTypeFill: true });
+  const [linkVis, setLinkVis] = useState({ color: "#6b7280", width: 1.0, alpha: 0.65, widthVariation: 0.6, useWeightColor: true });
 
   const forcePosRef = useRef({});
 
@@ -601,23 +765,22 @@ export default function App() {
   const lSet = (k) => (v) => setLinkVis((o) => ({ ...o, [k]: v }));
 
   return (
-    <div className="h-screen w-full">
-      <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} onEdgesChange={onEdgesChange} onNodeClick={onNodeClick} onEdgeClick={onEdgeClick} fitView fitViewOptions={{ padding: 0.2 }} proOptions={{ hideAttribution: true }}>
-        <Background />
-        <Controls position="bottom-right" />
-        <MiniMap pannable zoomable style={{ bottom: 10, left: 10 }} />
+    <div className="h-screen w-full bg-[#0a0a0f]">
+      <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} onEdgesChange={onEdgesChange} onNodeClick={onNodeClick} onEdgeClick={onEdgeClick} fitView fitViewOptions={{ padding: 0.2 }} proOptions={{ hideAttribution: true }} style={{ background: "#0a0a0f" }}>
+        <Background color="#ffffff10" gap={20} />
+        <Controls position="bottom-right" className="dark-controls" />
 
         {/* ── Floating header bar ── */}
         <Panel position="top-center">
-          <div className="flex items-center gap-3 rounded-2xl border border-black/10 bg-white/90 px-4 py-2 shadow-lg backdrop-blur-xl">
-            <span className="text-sm font-semibold whitespace-nowrap">Shinri — Venezuela KG</span>
-            <div className="h-4 w-px bg-black/10" />
+          <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#141420]/90 px-4 py-2 shadow-lg backdrop-blur-xl">
+            <span className="text-sm font-semibold whitespace-nowrap text-white/90">Shinri — Venezuela KG</span>
+            <div className="h-4 w-px bg-white/10" />
             <div className="flex items-center gap-1.5 text-xs">
-              <span className="rounded-full border border-black/10 bg-white px-2 py-0.5 tabular-nums">Nodes <b>{stats.n}</b></span>
-              <span className="rounded-full border border-black/10 bg-white px-2 py-0.5 tabular-nums">Edges <b>{stats.e}</b></span>
-              <span className="rounded-full border border-green-200 bg-green-50 px-2 py-0.5">+{stats.pos}</span>
-              <span className="rounded-full border border-red-200 bg-red-50 px-2 py-0.5">−{stats.neg}</span>
-              {stats.neu > 0 && <span className="rounded-full border border-black/10 bg-white px-2 py-0.5">·{stats.neu}</span>}
+              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 tabular-nums text-white/70">Nodes <b className="text-white/90">{stats.n}</b></span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 tabular-nums text-white/70">Edges <b className="text-white/90">{stats.e}</b></span>
+              <span className="rounded-full border border-green-500/30 bg-green-500/10 px-2 py-0.5 text-green-400">+{stats.pos}</span>
+              <span className="rounded-full border border-red-500/30 bg-red-500/10 px-2 py-0.5 text-red-400">−{stats.neg}</span>
+              {stats.neu > 0 && <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-white/50">·{stats.neu}</span>}
             </div>
           </div>
         </Panel>
@@ -627,7 +790,7 @@ export default function App() {
           <div className="flex flex-col gap-2">
             <button
               onClick={() => setPanelOpen((v) => !v)}
-              className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 bg-white/90 shadow-lg backdrop-blur-xl text-sm hover:bg-white transition-colors"
+              className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 bg-[#141420]/90 shadow-lg backdrop-blur-xl text-sm text-white/80 hover:bg-[#1a1a2e] transition-colors"
               title={panelOpen ? "Collapse panel" : "Open panel"}
             >
               {panelOpen ? "✕" : "☰"}
@@ -635,7 +798,7 @@ export default function App() {
 
             {/* ── Controls panel ── */}
             {panelOpen && (
-              <div className="w-[280px] max-h-[calc(100vh-120px)] overflow-y-auto space-y-2 rounded-2xl border border-black/10 bg-white/90 p-3 shadow-xl backdrop-blur-xl">
+              <div className="w-[280px] max-h-[calc(100vh-120px)] overflow-y-auto space-y-2 rounded-2xl border border-white/10 bg-[#141420]/90 p-3 shadow-xl backdrop-blur-xl">
 
                 <Card title="Explore">
                   <div className="space-y-3">
@@ -671,7 +834,7 @@ export default function App() {
                     {nodeVis.useTypeFill && (
                       <div className="flex flex-wrap gap-x-2 gap-y-1.5 pt-0.5">
                         {Object.entries(TYPE_COLORS).map(([type, color]) => (
-                          <span key={type} className="flex items-center gap-1 text-[10px] text-black/50">
+                          <span key={type} className="flex items-center gap-1 text-[10px] text-white/50">
                             <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: color }} />
                             {type.replace("_", " ")}
                           </span>
@@ -691,7 +854,7 @@ export default function App() {
                   <div className="space-y-3">
                     <Toggle label="Relation coloring" checked={linkVis.useWeightColor} onChange={lSet("useWeightColor")} />
                     {linkVis.useWeightColor ? (
-                      <div className="flex gap-3 text-[11px] text-black/50">
+                      <div className="flex gap-3 text-[11px] text-white/50">
                         <span className="flex items-center gap-1"><span className="inline-block w-5 h-0.5 rounded" style={{ background: "#22c55e" }} /> positive</span>
                         <span className="flex items-center gap-1"><span className="inline-block w-5 h-0.5 rounded" style={{ background: "#ef4444" }} /> negative</span>
                         <span className="flex items-center gap-1"><span className="inline-block w-5 h-0.5 rounded" style={{ background: "#94a3b8" }} /> neutral</span>
@@ -710,8 +873,8 @@ export default function App() {
                     <Toggle label="Show negative edges" checked={showNegative} onChange={setShowNegative} />
                     <Toggle label="Show neutral edges" checked={showNeutral} onChange={setShowNeutral} />
                     <div className="pt-1">
-                      <div className="mb-1 text-xs text-black/70">Search</div>
-                      <input className="w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm" placeholder="e.g., oil, machado, sanctions" value={query} onChange={(e) => setQuery(e.target.value)} />
+                      <div className="mb-1 text-xs text-white/60">Search</div>
+                      <input className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/90 placeholder-white/30" placeholder="e.g., oil, machado, sanctions" value={query} onChange={(e) => setQuery(e.target.value)} />
                     </div>
                   </div>
                 </Card>
@@ -724,38 +887,38 @@ export default function App() {
         <Panel position="top-right">
           <div className="flex flex-col gap-2 items-end">
             {/* Center badge */}
-            <div className="rounded-2xl border border-black/10 bg-white/90 px-3 py-2 text-xs shadow-lg backdrop-blur-xl">
-              <div className="font-semibold">Center</div>
-              <div className="text-black/70">{nodeMap[centerId]?.label || centerId}</div>
+            <div className="rounded-2xl border border-white/10 bg-[#141420]/90 px-3 py-2 text-xs shadow-lg backdrop-blur-xl">
+              <div className="font-semibold text-white/90">Center</div>
+              <div className="text-white/60">{nodeMap[centerId]?.label || centerId}</div>
             </div>
 
             {/* Selection card */}
             {(selectedNode || selectedEdge) && (
-              <div className="w-[280px] rounded-2xl border border-black/10 bg-white/90 p-4 shadow-xl backdrop-blur-xl">
-                <div className="mb-3 text-sm font-semibold">Selection</div>
+              <div className="w-[280px] rounded-2xl border border-white/10 bg-[#141420]/90 p-4 shadow-xl backdrop-blur-xl">
+                <div className="mb-3 text-sm font-semibold text-white/90">Selection</div>
                 {selectedNode && (
-                  <div className="space-y-2 text-sm text-black/80">
-                    <div className="text-sm font-semibold">{selectedNode.label}</div>
+                  <div className="space-y-2 text-sm text-white/80">
+                    <div className="text-sm font-semibold text-white">{selectedNode.label}</div>
                     <div className="flex items-center gap-2">
-                      <span className="rounded-full px-2 py-0.5 text-[10px] font-medium" style={{ background: (TYPE_COLORS[selectedNode.type] || "#666") + "20", color: TYPE_COLORS[selectedNode.type] || "#666" }}>
+                      <span className="rounded-full px-2 py-0.5 text-[10px] font-medium" style={{ background: (TYPE_COLORS[selectedNode.type] || "#666") + "30", color: TYPE_COLORS[selectedNode.type] || "#999" }}>
                         {selectedNode.type.replace("_", " ")}
                       </span>
-                      <span className="text-xs text-black/50">mentions: {selectedNode.mentions}</span>
+                      <span className="text-xs text-white/40">mentions: {selectedNode.mentions}</span>
                     </div>
-                    <div className="rounded-xl border border-black/10 bg-neutral-50/80 p-3 text-xs text-black/70 leading-relaxed">{selectedNode.description}</div>
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-xs text-white/60 leading-relaxed">{selectedNode.description}</div>
                     <div className="flex gap-2">
-                      <button className="rounded-xl border border-black/10 bg-white px-3 py-2 text-xs shadow-sm hover:bg-neutral-50 transition-colors" onClick={() => setCenterId(selectedNode.id)}>Focus here</button>
-                      <button className="rounded-xl border border-black/10 bg-white px-3 py-2 text-xs shadow-sm hover:bg-neutral-50 transition-colors" onClick={() => setQuery(selectedNode.label)}>Search this</button>
+                      <button className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/70 shadow-sm hover:bg-white/10 transition-colors" onClick={() => setCenterId(selectedNode.id)}>Focus here</button>
+                      <button className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/70 shadow-sm hover:bg-white/10 transition-colors" onClick={() => setQuery(selectedNode.label)}>Search this</button>
                     </div>
                   </div>
                 )}
                 {selectedEdge && (
-                  <div className="space-y-2 text-sm text-black/80">
-                    <div className="text-sm font-semibold">{nodeMap[selectedEdge.source]?.label || selectedEdge.source} → {nodeMap[selectedEdge.target]?.label || selectedEdge.target}</div>
-                    <span className="rounded-full px-2 py-0.5 text-[10px] font-medium" style={{ background: (REL_COLORS[selectedEdge.relation] || "#666") + "20", color: REL_COLORS[selectedEdge.relation] || "#666" }}>
+                  <div className="space-y-2 text-sm text-white/80">
+                    <div className="text-sm font-semibold text-white">{nodeMap[selectedEdge.source]?.label || selectedEdge.source} → {nodeMap[selectedEdge.target]?.label || selectedEdge.target}</div>
+                    <span className="rounded-full px-2 py-0.5 text-[10px] font-medium" style={{ background: (REL_COLORS[selectedEdge.relation] || "#666") + "30", color: REL_COLORS[selectedEdge.relation] || "#999" }}>
                       {selectedEdge.relation}
                     </span>
-                    <div className="rounded-xl border border-black/10 bg-neutral-50/80 p-3 text-xs text-black/70 leading-relaxed">{selectedEdge.description}</div>
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-xs text-white/60 leading-relaxed">{selectedEdge.description}</div>
                   </div>
                 )}
               </div>

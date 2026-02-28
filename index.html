@@ -7,7 +7,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html, body, #root { height: 100%; overflow: hidden; }
+      html, body, #root { height: 100%; overflow: hidden; background: #0a0a0f; }
+      /* Dark mode overrides for ReactFlow controls */
+      .react-flow__controls { background: transparent !important; border: none !important; box-shadow: none !important; }
+      .react-flow__controls-button { background: rgba(20,20,32,0.92) !important; border: 1px solid rgba(255,255,255,0.1) !important; color: rgba(255,255,255,0.7) !important; fill: rgba(255,255,255,0.7) !important; border-radius: 10px !important; margin-bottom: 4px; backdrop-filter: blur(12px); }
+      .react-flow__controls-button:hover { background: rgba(30,30,50,1) !important; }
+      .react-flow__controls-button svg { fill: rgba(255,255,255,0.7) !important; }
+      .react-flow__controls-button svg path { fill: rgba(255,255,255,0.7) !important; }
+      /* Edge selection dark */
+      .react-flow__edge.selected .react-flow__edge-path { stroke: #60a5fa !important; }
+      .react-flow__node.selected { box-shadow: 0 0 0 2px #60a5fa !important; }
+      /* Scrollbar dark */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
     </style>
   </head>
   <body>
