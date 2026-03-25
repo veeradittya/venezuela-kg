@@ -7,7 +7,31 @@
       "Bash(npm install:*)",
       "Bash(git init:*)",
       "Bash(git branch:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)",
+      "Bash(brew list:*)",
+      "Bash(brew install:*)",
+      "Bash(/opt/homebrew/bin/gh api:*)",
+      "Bash(/opt/homebrew/bin/gh repo edit:*)",
+      "Bash(/opt/homebrew/bin/gh workflow run deploy.yml -R veeradittya/venezuela-kg)",
+      "Bash(/opt/homebrew/bin/gh run list -R veeradittya/venezuela-kg --limit 3)",
+      "Bash(git push)",
+      "Bash(/opt/homebrew/bin/gh run watch -R veeradittya/venezuela-kg 22495898058 --exit-status)",
+      "Bash(wc:*)",
+      "WebFetch(domain:docs.polymarket.com)",
+      "WebFetch(domain:gamma-api.polymarket.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(npx expo export:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(npx expo install:*)",
+      "Bash(node -e:*)",
+      "WebFetch(domain:trading-api.readme.io)",
+      "WebFetch(domain:kalshi.com)",
+      "WebFetch(domain:docs.kalshi.com)",
+      "Bash(git -C /Users/veeradittya/Desktop/shinri show a1784f6 --stat)",
+      "Bash(git -C /Users/veeradittya/Desktop/shinri show a1784f6:shinri_knowledge_graph_explorer_react.jsx)"
     ]
   }
 }

@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #000000;
+  --color-panel: #0a0a0a;
+  --color-border: #1a1a1a;
+  --color-border-light: #262626;
+  --color-text: #d4d4d4;
+  --color-text-muted: #737373;
+  --color-accent: #ffffff;
+  --color-accent-glow: rgba(255, 255, 255, 0.15);
+  --color-negative: #ff3333;
+  --color-positive: #33cc33;
+  --color-warning: #ffaa00;
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ─── Light mode: override ALL Tailwind theme colors at once ─── */
+[data-theme="light"] {
+  --color-bg: #f5f5f5 !important;
+  --color-panel: #ffffff !important;
+  --color-border: #d4d4d4 !important;
+  --color-border-light: #c0c0c0 !important;
+  --color-text: #1a1a1a !important;
+  --color-text-muted: #666666 !important;
+  --color-accent: #000000 !important;
+  --color-accent-glow: rgba(0, 0, 0, 0.1) !important;
+  --color-negative: #cc0000 !important;
+  --color-positive: #008800 !important;
+  --color-warning: #cc7700 !important;
+}
+
+[data-theme="light"] body {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* ─── Light mode: full inversion ─── */
+[data-theme="light"] body {
+  filter: invert(1) hue-rotate(180deg);
+}
+/* Un-invert images/canvases so graphs render correctly */
+[data-theme="light"] img,
+[data-theme="light"] video {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-panel);
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #bbb;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Sigma container overrides */
+.sigma-container {
+  background: transparent !important;
+}
+
+/* Signal banner scroll */
+@keyframes signal-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.signal-scroll {
+  animation: signal-scroll 60s linear infinite;
+}
+.signal-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Chat window */
+.chat-glow {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.06), 0 0 60px rgba(255, 255, 255, 0.03);
+}
+[data-theme="light"] .chat-glow {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08), 0 0 60px rgba(0, 0, 0, 0.04);
+}
